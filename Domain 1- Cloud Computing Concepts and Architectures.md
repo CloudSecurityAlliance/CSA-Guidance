@@ -1,6 +1,6 @@
 # Domain 1: Cloud Computing Concepts and Architectures
 
-##Introduction
+## 1.0 Introduction
 
 This domain provides the conceptual framework for the rest of the Cloud Security Alliance’s guidance.  It describes and defines cloud computing, sets our baseline terminology, and details the overall logical and architectural frameworks used in the rest of the document. 
 
@@ -21,9 +21,9 @@ This domain includes 4 sections:
 
 The Cloud Security Alliance isn't setting out to create an entirely new taxonomy or reference model. Our objective is to distill and harmonize existing models, most notably the work in [NIST Special Publication 800-145](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf) and [ISO/IEC 17788/9](http://www.iso.org/iso/catalogue_detail?csnumber=60544), and focus on what's most relevant to security professionals.
 
-##1.0 Overview
+## 1.1 Overview
 
-###1.1 Defining Cloud Computing
+### 1.1.1 Defining Cloud Computing
 
 Cloud computing is a new operational model and set of technologies for managing shared pools of computing resources. 
 
@@ -49,7 +49,7 @@ This is the difference between cloud computing and traditional virtualization; v
 
 Clouds are *multitenant* by nature. Multiple different consumer consistencies share the same pool of resources but are *segregated* and *isolated* from each other. Segregation allows the cloud provider to divvy up resources to the different groups, and isolation ensures they can't see or modify each others' assets. Multitenancy doesn't only apply across different organizations, it is also used to divvy up resources between different units in a single business or organization.
 
-###Definitional Model
+### 1.1.2 Definitional Model
 
 The Cloud Security Alliance uses the [NIST model for cloud computing](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf) as our standard for defining cloud computing. The CSA also endorses the [ISO/IEC model](http://www.iso.org/iso/catalogue_detail?csnumber=60544) which is more in-depth, and also serves as a reference model. Throughout this domain we will  reference both.
 
@@ -59,9 +59,9 @@ NIST’s publication is generally well accepted, and the Guidance aligns with th
 
 NIST defines cloud computing by describing five essential characteristics, three cloud service models, and four cloud deployment models. They are summarized in visual form in Figure 1 and explained in detail below. 
 
-<!-- insert graphic of NIST model here -->
+![NIST Model for Cloud Computing](https://github.com/cloudsecurityalliance/CSA-Guidance/images/1.1.2.-1.png)
 
-####Essential Characteristics
+#### 1.1.2.1 Essential Characteristics
 
 These are the characteristics that make a cloud a cloud. If something has these characteristics, we consider it cloud computing. If it lacks any of them, it is likely not a cloud.
 
@@ -73,7 +73,7 @@ These are the characteristics that make a cloud a cloud. If something has these 
 
 ISO/IEC 17788 lists six key characteristics, the first five of which are identical to the NIST characteristics. The only addition is *multi-tenancy* as separate from resource pooling.
 
-####Service Models
+#### 1.1.2.2 Service Models
 
 NIST defines three *service models* which describe the different foundational categories of cloud services:
 
@@ -89,7 +89,7 @@ Some cloud services span these tiers, or don't neatly fall into a single service
 
 Both approaches are equally valid, but since the NIST model is more concise and currently used more broadly, it is the definition predominantly used in CSA research. 
 
-####Deployment Models
+#### 1.1.2.3 Deployment Models
 
 Both NIST and ISO/IEC use the same four cloud deployment models. These are how the technologies are deployed and consumed, and apply across the entire range of service models:
 
@@ -102,7 +102,7 @@ Deployment models are defined based on the *cloud consumer*; who uses the cloud.
 
 <!-- insert graphic of deployment models here -->
 
-###Reference and Architecture Models
+### 1.1.3 Reference and Architecture Models
 
 These days there is a wide range of technological techniques for building cloud services, making any single reference or architectural model obsolete from the start. The objective of this section is to provide some fundamentals to help security professionals make informed decisions, and provide a baseline to understand more-complex and emerging models. For an in-depth reference architectural model, we again recommend [ISO/IEC 17789](http://www.iso.org/iso/catalogue_detail?csnumber=60544), and [NIST 500-292](http://www.nist.gov/customcf/get_pdf.cfm?pub_id=909505), which complements the NIST definition model.
 
@@ -110,7 +110,7 @@ One way of looking at cloud computing is as a stack where Software as a Service 
 
 <!-- insert Hoff's reference model -->
 
-####Infrastructure as a Service
+#### 1.1.3.1 Infrastructure as a Service
 
 Physical facilities and infrastructure hardware forms the foundation of **IaaS**. With cloud computing we abstract and pool these resources, but we always need physical hardware, networks, and storage to build on.  These resources are pooled using abstraction and orchestration. Abstraction, often via virtualization, frees the resources from their physical constraints to enable pooling. Then a set of core connectivity and delivery tools (orchestration) ties these abstracted resources together, creates the pools, and provides the automation to deliver them to customers.
 
@@ -130,7 +130,7 @@ The controller then creates a virtual hard drive by requesting storage from the 
 
 The controller then sends copy of the server image into the virtual machine, boots it, and configures it, creating an instance running in a virtual machine, with virtual networking and storage all properly configured. Once this entire process is complete, the metadata and connectivity information is brokered by the cloud controller and available to the consumer, who can now connect to the instance and log in.
 
-####Platform as a Service
+#### 1.1.3.2 Platform as a Service
 
 Of all the service models, **PaaS** is the hardest to definitively characterize due to both the wide range of PaaS offerings, and the many ways of building PaaS services. PaaS adds an additional layer of integration with application development frameworks, middleware capabilities, and functions such as database, messaging, and queuing. These services allow developers to build applications on the platform with programming languages and tools that are supported by the stack.
 
@@ -146,7 +146,7 @@ This simplified architecture diagram shows an application platform (PaaS) runnin
 
 PaaS doesn't necessarily need to be built on top of IaaS; there is no reason it cannot be a custom-designed stand-alone architecture. The defining characteristic is that consumers access and manage the platform, not the underlying infrastructure (including cloud infrastructure).
 
-####Software as a Service
+#### 1.1.3.3 Software as a Service
 
 SaaS services are full, multi-tenant applications, with all the architectural complexities of any large software platform. Many SaaS providers build on top of IaaS and PaaS due to the increased agility, resiliency and (potential) economic benefits. 
 
@@ -160,7 +160,7 @@ The simplified architecture diagram below is taken from a real SaaS platform, bu
 
 These reference and architectural models should not be construed as being canonical. They are included to provide security professionals a deeper understanding of how cloud computing works and is constructed, but there are far too many different approaches in the real world to include them all.
 
-###Logical Model
+### 1.1.4 Logical Model
 <!-- note to editor- I really don't like this intro. Help me, you're my only hope! -RM -->
 At a high level, both cloud and traditional computing adhere to a logical model that helps identify different layers based on functionality. This is useful to illustrate the differences between the different computing models themselves:
 
@@ -181,9 +181,9 @@ These layers tend to map to different teams, disciplines, and technologies commo
 
 For example, a cloud-native application that makes heavy utilization of a cloud provider's PaaS products will experience more applistructure differences than the migration of an existing application, with minimal changes, to Infrastructure as a Service.
 
-## Cloud Security Scope, Responsibilities, and Models
+## 1.2 Cloud Security Scope, Responsibilities, and Models
 
-### Cloud Security and Compliance Scope and Responsibilities
+### 1.2.1 Cloud Security and Compliance Scope and Responsibilities
 
 It might sound trite, but cloud security and compliance includes everything you do today, just in the cloud. All the traditional security domains remain, but the *nature of risks*, *roles and responsibilities*, and *implementation of controls* change, often dramatically. 
 
@@ -217,7 +217,7 @@ The Cloud Security Alliance provides two tools to help meet these requirements:
 
 Both documents will need tuning for specific organizational and project requirements, but provide a comprehensive starting template, and can be especially useful for ensuring compliance requirements are met.
 
-### Cloud Security Models
+### 1.2.2 Cloud Security Models
 
 Cloud security models are tools to help guide security decisions. The term "model" can be used a little nebulously so for our purposes we break out the following types:
 
@@ -239,7 +239,7 @@ The CSA has reviewed and recommends the following models:
 
 Throughout this Guidance we also refer to other domain-specific models.
 
-#### A Simple Cloud Security Process Model
+#### 1.2.2.1 A Simple Cloud Security Process Model
 
 While the implementation details, necessary controls, specific processes, and various reference architectures and design models vary greatly depending on the specific cloud project, there is a relatively straightforward, high-level process for managing cloud security:
 
@@ -257,13 +257,13 @@ The key is to identify requirements, design the architecture, and then identify 
 
 <!-- insert a process diagram of this -->
 
-## Areas of Critical Focus
+## 1.3 Areas of Critical Focus
 
 The thirteen other domains which comprise the remainder of the CSA guidance highlight areas of concern for cloud computing and are tuned to address both the strategic and tactical security ‘pain points’ within a cloud environment and can be applied to any combination of cloud service and deployment model. 
 
 The domains are divided into two broad categories: governance and operations.  The governance domains are broad and address strategic and policy issues within a cloud computing environment, while the operational domains focus on more tactical security concerns and implementation within the architecture.
 
-###Governing in the Cloud
+### 1.3.1 Governing in the Cloud
 
 |	Domain	|	Title		|	Description	|
 |	----------	|	-----------	|	--------------	|
@@ -273,7 +273,7 @@ The domains are divided into two broad categories: governance and operations.  T
 |	5	|	Information Management and Data Security	|	Governing data that is placed in the cloud.  Items surrounding the identification and control of data in the cloud, as well as compensating controls that can be used to deal with the loss of physical control when moving data to the cloud, are discussed here. Other items, such as who is responsible for data confidentiality, integrity, and availability are mentioned. 	|
 |	6	|	Interoperability and Portability	|	The ability to move data/services from one provider to another, or bring it entirely back in-house.  Together with issues surrounding interoperability between providers. 	|
 
-###Operating in the Cloud
+### 1.3.2 Operating in the Cloud
 
 |	Domain	|	Title		|	Description	|
 |	----------	|	-----------	|	--------------	|
@@ -287,11 +287,11 @@ The domains are divided into two broad categories: governance and operations.  T
 |	14	|	Security as a Service	|	Providing third party facilitated security assurance, incident management, compliance attestation, and identity and access oversight. 	|
 |	15	|	Related Technologies	|	Established and emerging technologies with a close relationship to cloud computing, including Big Data, Internet of Things, and mobile computing.	|
 
-## Recommendations
+## 1.4 Recommendations
 
-* Understand the differences between cloud computing and traditional infrastructure or virtualization, and how *abstraction* and *automation* impact security.
-* Become familiar with the NIST model for cloud computing, and the CSA reference architecture.
-* Use tools like the CSA Common Assessment Initiative Questionnaire (CAIQ) to evaluate and compare cloud providers.
-* Cloud providers should clearly document their security controls and features and publish them using tools like the CSA CAIQ
-* Use tools like the CSA Cloud Controls Matrix (CCM) to assess and document cloud project security and compliance requirements and controls, and who is responsible for each.
-* Use a cloud security process model to select providers, design architectures, identify control gaps, and implement security and compliance controls.
+1. Understand the differences between cloud computing and traditional infrastructure or virtualization, and how *abstraction* and *automation* impact security.
+1. Become familiar with the NIST model for cloud computing, and the CSA reference architecture.
+1. Use tools like the CSA Common Assessment Initiative Questionnaire (CAIQ) to evaluate and compare cloud providers.
+1. Cloud providers should clearly document their security controls and features and publish them using tools like the CSA CAIQ
+1. Use tools like the CSA Cloud Controls Matrix (CCM) to assess and document cloud project security and compliance requirements and controls, and who is responsible for each.
+1. Use a cloud security process model to select providers, design architectures, identify control gaps, and implement security and compliance controls.
