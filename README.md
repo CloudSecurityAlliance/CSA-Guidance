@@ -23,4 +23,10 @@ Here is what you can expect:
 * For each domain, there will be an outline, first draft, and near-final draft.
 * The near-final drafts will be pulled from GitHub and converted into Word, with updated graphics, for final publication.
 
-If you have any questions or comments, please let us know, and thank you for your help.
+If you have any questions or general comments, please let us know either here or through email at guidance@cloudsecurityalliance.org, and thank you for your help.
+
+## Editing and style notes
+
+* All images should be planed in /images and named with the section they appear in, followed by a dash, followed by an enumerator. e.g. "1.1.2-1.png" for the first image in the directory. Please use standard Markdown image formatting.
+* Links should be referenced, not inline. Each link should be sequentially ordered. This makes things easier to read (look at Domain 1 for formatting examples, it's easy). If links start getting out of order, feel free to use "1.1" or similar to neaten things up.
+* Images will be redone by a graphics team before publication, so don't worry about having them look consistent.

@@ -19,7 +19,10 @@ This domain includes 4 sections:
 * Cloud conceptual, architectural, and reference model
 * Cloud security and compliance scope, responsibilities, and models
 
-The Cloud Security Alliance isn't setting out to create an entirely new taxonomy or reference model. Our objective is to distill and harmonize existing models, most notably the work in [NIST Special Publication 800-145](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf) and [ISO/IEC 17788/9](http://www.iso.org/iso/catalogue_detail?csnumber=60544), and focus on what's most relevant to security professionals.
+The Cloud Security Alliance isn't setting out to create an entirely new taxonomy or reference model. Our objective is to distill and harmonize existing models, most notably the work in [NIST Special Publication 800-145][1] and [ISO/IEC 17788/9][2], and focus on what's most relevant to security professionals.
+
+[1]: http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf
+[2]: http://www.iso.org/iso/catalogue_detail?csnumber=60544
 
 ## 1.1 Overview
 
@@ -41,7 +44,9 @@ A (slightly) simpler way of describing cloud is that it takes a set of resources
 
 A cloud can consist of nearly any computing resources — from our "compute" examples of processors and memory, to networks, storage, and higher level resources like databases and applications. For example, subscribing to a customer relations management application for 500 employees on a service shared by hundreds of other organizations is just as much cloud computing as launching 100 remote servers on a compute cloud.
 
->Definition: a *cloud consumer* is the person or organization requesting and using the resources, and the *cloud provider* is the person or organization who delivers it. We also sometimes use the terms *client* and *consumer* to refer to the cloud consumer, and *service* or simply *"cloud"* to describe the provider. [NIST 500-292](http://www.nist.gov/customcf/get_pdf.cfm?pub_id=909505) uses the term "cloud actor" and adds roles for cloud brokers, carriers, and auditors.
+>Definition: a *cloud consumer* is the person or organization requesting and using the resources, and the *cloud provider* is the person or organization who delivers it. We also sometimes use the terms *client* and *consumer* to refer to the cloud consumer, and *service* or simply *"cloud"* to describe the provider. [NIST 500-292][3] uses the term "cloud actor" and adds roles for cloud brokers, carriers, and auditors.
+
+[3]: http://www.nist.gov/customcf/get_pdf.cfm?pub_id=909505
 
 The key techniques to create a cloud are *abstraction* and *orchestration*. We abstract the resources from the underlying physical infrastructure to create our pools, and use orchestration (and automation) to coordinate carving out and delivering a set of resources from the pools to the consumers. As you will see, these two techniques create all the emergent characteristics we use to define something as a "cloud". 
 
@@ -51,7 +56,10 @@ Clouds are *multitenant* by nature. Multiple different consumer consistencies sh
 
 ### 1.1.2 Definitional Model
 
-The Cloud Security Alliance uses the [NIST model for cloud computing](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf) as our standard for defining cloud computing. The CSA also endorses the [ISO/IEC model](http://www.iso.org/iso/catalogue_detail?csnumber=60544) which is more in-depth, and also serves as a reference model. Throughout this domain we will  reference both.
+The Cloud Security Alliance uses the [NIST model for cloud computing][4] as our standard for defining cloud computing. The CSA also endorses the [ISO/IEC model][5] which is more in-depth, and also serves as a reference model. Throughout this domain we will  reference both.
+
+[4]: http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf
+[5]: http://www.iso.org/iso/catalogue_detail?csnumber=60544
 
 NIST’s publication is generally well accepted, and the Guidance aligns with the NIST Working Definition of Cloud Computing (NIST 800-145) to bring coherence and consensus around a common language to focus on use cases rather than semantic nuances.
 
@@ -59,7 +67,7 @@ NIST’s publication is generally well accepted, and the Guidance aligns with th
 
 NIST defines cloud computing by describing five essential characteristics, three cloud service models, and four cloud deployment models. They are summarized in visual form in Figure 1 and explained in detail below. 
 
-![NIST Model for Cloud Computing](https://github.com/cloudsecurityalliance/CSA-Guidance/images/1.1.2.-1.png)
+![NIST Model for Cloud Computing](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.2.-1png?raw=true)
 
 #### 1.1.2.1 Essential Characteristics
 
@@ -100,15 +108,18 @@ Both NIST and ISO/IEC use the same four cloud deployment models. These are how t
 
 Deployment models are defined based on the *cloud consumer*; who uses the cloud. As the diagram below shows, the organization that owns and manages the cloud will vary even within a single deployment model.
 
-<!-- insert graphic of deployment models here -->
+![Cloud Computing Deployment Models](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.2.3-1.png?raw=true)
 
 ### 1.1.3 Reference and Architecture Models
 
-These days there is a wide range of technological techniques for building cloud services, making any single reference or architectural model obsolete from the start. The objective of this section is to provide some fundamentals to help security professionals make informed decisions, and provide a baseline to understand more-complex and emerging models. For an in-depth reference architectural model, we again recommend [ISO/IEC 17789](http://www.iso.org/iso/catalogue_detail?csnumber=60544), and [NIST 500-292](http://www.nist.gov/customcf/get_pdf.cfm?pub_id=909505), which complements the NIST definition model.
+These days there is a wide range of technological techniques for building cloud services, making any single reference or architectural model obsolete from the start. The objective of this section is to provide some fundamentals to help security professionals make informed decisions, and provide a baseline to understand more-complex and emerging models. For an in-depth reference architectural model, we again recommend [ISO/IEC 17789][6], and [NIST 500-292][7], which complements the NIST definition model.
+
+[6]: http://www.iso.org/iso/catalogue_detail?csnumber=60544
+[7]: http://www.nist.gov/customcf/get_pdf.cfm?pub_id=909505
 
 One way of looking at cloud computing is as a stack where Software as a Service is built on Platform as a Service, which is built on Infrastructure as a Service. This is not representative of all (or even most) real-world deployments, but serves as a useful reference to start the discussion.
 
-<!-- insert Hoff's reference model -->
+![Cloud Reference Architecture](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.3-1.png?raw=true)
 
 #### 1.1.3.1 Infrastructure as a Service
 
@@ -122,7 +133,7 @@ Thus IaaS consists of a facility, hardware, an abstration layer, an orchestratio
 
 Here is a simplified architectural example of a compute IaaS platform:
 
-<!-- insert IaaS architecture diagram -->
+![Simplified IaaS Architecture](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.3.1-1.png?raw=true)
 
 A series of physical servers each run two components — a hypervisor (for virtualization), and the management/orchestration software to tie in the servers and connect them to the compute controller. A customer asks for an instance (virtual server) of a particular size and the cloud controller determines which server has the capacity, and allocates an instance of the requested size. 
 
@@ -142,7 +153,7 @@ Another example is an application deployment platform; a place where developers 
 
 This simplified architecture diagram shows an application platform (PaaS) running on top of our IaaS architecture:
 
-<!-- insert PaaS diagram -->
+![Simplified PaaS Architecture](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.3.2-1.png?raw=true)
 
 PaaS doesn't necessarily need to be built on top of IaaS; there is no reason it cannot be a custom-designed stand-alone architecture. The defining characteristic is that consumers access and manage the platform, not the underlying infrastructure (including cloud infrastructure).
 
@@ -161,7 +172,7 @@ The simplified architecture diagram below is taken from a real SaaS platform, bu
 These reference and architectural models should not be construed as being canonical. They are included to provide security professionals a deeper understanding of how cloud computing works and is constructed, but there are far too many different approaches in the real world to include them all.
 
 ### 1.1.4 Logical Model
-<!-- note to editor- I really don't like this intro. Help me, you're my only hope! -RM -->
+
 At a high level, both cloud and traditional computing adhere to a logical model that helps identify different layers based on functionality. This is useful to illustrate the differences between the different computing models themselves:
 
 * *Infrastructure:* The core components of a computing system; compute, network, and storage. The foundation that every else is built on. The moving parts.
@@ -169,7 +180,7 @@ At a high level, both cloud and traditional computing adhere to a logical model 
 * *Infostructure:* The data and information. Content in a database, file storage, etc.
 * *Applistructure:* The applications and services used to build them.
 
-<!-- insert diagram here -->
+![Cloud Logical Model](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.4-1.png?raw=true)
 
 Different security focuses map to the different logical layers. Application security maps to applistructure, data security to infostructure, and infrastructure security to infrastructure. 
 
@@ -197,7 +208,7 @@ At a high level, security responsibility maps to the degree of control any given
 * *Platform as a Service:* The cloud provider is responsible for the security of the platform, while the consumer is responsible for everything they implement on the platform, including how they configure any offered security features. The responsibilities are thus more evenly split. For example, when using a Database as a Service the provider manages fundamental security, patching, and core configuration, while the cloud consumer is responsible for everything else, including which security features of the database to use, managing accounts, or even authentication methods.
 * *Infrastructure as a Service* Just like PaaS, the provider is responsible for foundational security, while the cloud consumer is responsible for everything they build on the infrastructure. Unlike PaaS, the line is lower, with far more responsibility on the client. For example, the IaaS provider will likely monitor their perimeter for attacks, but the consumer is fully responsible for how they define and implement their virtual network security based on the tools available on the service.
 
-<!-- insert security responsibility graphic -->
+![Cloud Security Responsibilities](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.2.1-1.png?raw=true)
 
 These roles are further complicated when using cloud brokers or other intermediaries and partners. 
 
@@ -212,8 +223,11 @@ The shared responsibility directly correlates to two recommendations:
 
 The Cloud Security Alliance provides two tools to help meet these requirements:
 
-* The [Consensus Assessment Initiative Questionnaire (CAIQ)](https://cloudsecurityalliance.org/group/consensus-assessments/). A standard template for cloud providers to document their security and compliance controls.
-* The [Cloud Controls Matrix (CCM)](https://cloudsecurityalliance.org/group/cloud-controls-matrix/) which lists cloud security controls, and maps them to multiple security and compliance standards. The CCM can also be used to document security responsibilities. 
+* The [Consensus Assessment Initiative Questionnaire (CAIQ)][8]. A standard template for cloud providers to document their security and compliance controls.
+* The [Cloud Controls Matrix (CCM)][9]which lists cloud security controls, and maps them to multiple security and compliance standards. The CCM can also be used to document security responsibilities. 
+
+[8]: https://cloudsecurityalliance.org/group/consensus-assessments/
+[9]: https://cloudsecurityalliance.org/group/cloud-controls-matrix/
 
 Both documents will need tuning for specific organizational and project requirements, but provide a comprehensive starting template, and can be especially useful for ensuring compliance requirements are met.
 
@@ -230,12 +244,17 @@ The lines between these models often blur and overlap, depending on the goals of
 
 The CSA has reviewed and recommends the following models:
 
-* The [CSA Enterprise Architecture](https://research.cloudsecurityalliance.org/tci/index.php/explore/)
-* The CSA [Cloud Controls Matrix (CCM)](https://cloudsecurityalliance.org/group/cloud-controls-matrix/)
-* The NIST draft [Cloud Computing Security Reference Architecture (NIST Special Publication 500-299)](http://collaborate.nist.gov/twiki-cloud-computing/pub/CloudComputing/CloudSecurity/NIST_Security_Reference_Architecture_2013.05.15_v1.0.pdf) , which includes conceptual models, reference architectures, and a controls framework.
-* ISO/IEC has a standard under development, which wasn't released yet when we wrote this section, but should be available soon: [ISO/IEC FDIS 27017 Information technology -- Security techniques -- Code of practice for information security controls based on ISO/IEC 27002 for cloud services](http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?ics1=35&ics2=040&ics3=&csnumber=43757).
+* The [CSA Enterprise Architecture][10]
+* The CSA [Cloud Controls Matrix (CCM)][11]
+* The NIST draft [Cloud Computing Security Reference Architecture (NIST Special Publication 500-299)][12] , which includes conceptual models, reference architectures, and a controls framework.
+* ISO/IEC has a standard under development, which wasn't released yet when we wrote this section, but should be available soon: [ISO/IEC FDIS 27017 Information technology -- Security techniques -- Code of practice for information security controls based on ISO/IEC 27002 for cloud services][13].
 
-<!-- picture of the CSA reference architecture -->
+[10]: https://research.cloudsecurityalliance.org/tci/index.php/explore/
+[11]: https://cloudsecurityalliance.org/group/cloud-controls-matrix/
+[12]: http://collaborate.nist.gov/twiki-cloud-computing/pub/CloudComputing/CloudSecurity/NIST_Security_Reference_Architecture_2013.05.15_v1.0.pdf
+[13]: http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?ics1=35&ics2=040&ics3=&csnumber=43757
+
+![CSA Enterprise Architecture](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/12.2.1.png?raw=true)
 
 Throughout this Guidance we also refer to other domain-specific models.
 
@@ -255,7 +274,7 @@ Since different cloud projects, even on a single provider, will likely leverage 
 
 The key is to identify requirements, design the architecture, and then identify the gaps based on the capabilities of the underlying cloud platform. That's why you need to know the cloud provider and architecture *before* you start translating security requirements into controls.
 
-<!-- insert a process diagram of this -->
+![Cloud Security Process](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.2.2.1-1.png?raw=true)
 
 ## 1.3 Areas of Critical Focus
 
@@ -295,3 +314,8 @@ The domains are divided into two broad categories: governance and operations.  T
 1. Cloud providers should clearly document their security controls and features and publish them using tools like the CSA CAIQ
 1. Use tools like the CSA Cloud Controls Matrix (CCM) to assess and document cloud project security and compliance requirements and controls, and who is responsible for each.
 1. Use a cloud security process model to select providers, design architectures, identify control gaps, and implement security and compliance controls.
+
+## 1.5 Credits
+
+* Rich Mogull
+* Reference architecture and logical model based on the work of Christofer Hoff
