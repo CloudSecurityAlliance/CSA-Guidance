@@ -67,7 +67,7 @@ NIST’s publication is generally well accepted, and the Guidance aligns with th
 
 NIST defines cloud computing by describing five essential characteristics, three cloud service models, and four cloud deployment models. They are summarized in visual form in Figure 1 and explained in detail below. 
 
-![NIST Model for Cloud Computing](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.2.-1png?raw=true)
+![NIST Model for Cloud Computing](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.2-1png?raw=true)
 
 #### 1.1.2.1 Essential Characteristics
 
@@ -254,7 +254,7 @@ The CSA has reviewed and recommends the following models:
 [12]: http://collaborate.nist.gov/twiki-cloud-computing/pub/CloudComputing/CloudSecurity/NIST_Security_Reference_Architecture_2013.05.15_v1.0.pdf
 [13]: http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?ics1=35&ics2=040&ics3=&csnumber=43757
 
-![CSA Enterprise Architecture](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/12.2.1.png?raw=true)
+![CSA Enterprise Architecture](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.2.2.1.png?raw=true)
 
 Throughout this Guidance we also refer to other domain-specific models.
 
