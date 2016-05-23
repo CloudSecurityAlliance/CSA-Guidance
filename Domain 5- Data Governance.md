@@ -25,7 +25,7 @@
 * Cloud Data Governance Domains
 	* We will not cover all of data governance, but focus on where cloud affects data governance.
 	* The cloud affects most data governance domains:
-		* Information Classification. Frequently tied to compliance, and affects cloud destinations and handling requirements. Not everyone necessarily has a data classification program, but if you do need to adjust for cloud.
+		* Information Classification. Frequently tied to compliance, and affects cloud destinations and handling requirements. Not everyone necessarily has a data classification program, but if you do, you need to adjust it for cloud.
 		* Information Management Policies.  This ties to classification, and cloud needs to be added if you have them. Should also cover the different SPI tiers, since sending to a SaaS vendor vs. building your own IaaS app is very different.
 		* Location and Jurisdictional Polices.  Very direct cloud implications. Any outside hosting must comply with location/jurisdiction requirements. Understand that internal policies can be changed for cloud, but legal requirements are hard lines.
 			* See the legal domain for more information.
@@ -52,10 +52,10 @@
 				* Read (*was access*)
 				* Process
 				* Store
-			* Information lifecycle phases chart
+			* Information lifecycle phases chart (* how is this different from data security lifecycle? *)
 			* Controls chart
 				* Possible and allowed
-				* A control limits what is allowed to what should be possible
+				* A control limits what is possible down to what should be allowed
 
 ## Recommendations
 	* Determine governance requirements for information before planning transition to cloud. This includes legal/regulatory requirements, contractual obligations, and other corporate policies.
