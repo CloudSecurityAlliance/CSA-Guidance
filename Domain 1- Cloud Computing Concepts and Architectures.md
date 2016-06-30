@@ -247,7 +247,7 @@ The CSA has reviewed and recommends the following models:
 * The [CSA Enterprise Architecture][10]
 * The CSA [Cloud Controls Matrix (CCM)][11]
 * The NIST draft [Cloud Computing Security Reference Architecture (NIST Special Publication 500-299)][12] , which includes conceptual models, reference architectures, and a controls framework.
-* [ISO/IEC FDIS 27017 Information technology -- Security techniques -- Code of practice for information security controls based on ISO/IEC 27002 for cloud services][13].
+* [ISO/IEC FDIS 27017 Informatiwon technology -- Security techniques -- Code of practice for information security controls based on ISO/IEC 27002 for cloud services][13].
 
 [10]: https://research.cloudsecurityalliance.org/tci/index.php/explore/
 [11]: https://cloudsecurityalliance.org/group/cloud-controls-matrix/
