@@ -10,7 +10,7 @@ Cloud computing offers tremendous potential *agility*, *resiliency*, and *econom
 
 However, these benefits only appear if you understand and adopt *cloud native* models and adjust your architectures and controls to align with the features and capabilities of cloud platforms. In fact, taking an existing application or asset and simply moving it to a cloud provider without change will often reduce agility, resiliency, and even security, all while increasing costs. 
 
-The goal of this domain is to build the foundation that the rest of the document, and the recommendations, are based on. To provide a common language and understanding of cloud computing for security professionals, and to begin highlighting the differences between cloud and traditional computing to help guide security professionals towards adopting cloud native approaches that result in security (and other) benefits, instead of creating more risks.
+The goal of this domain is to build the foundation that the rest of the document, and the recommendations, are based on. To provide a common language and understanding of cloud computing for security professionals, to begin highlighting the differences between cloud and traditional computing , and to help guide security professionals towards adopting cloud native approaches that result in security (and other) benefits, instead of creating more risks.
 
 This domain includes 4 sections:
 
@@ -19,7 +19,7 @@ This domain includes 4 sections:
 * Cloud conceptual, architectural, and reference model
 * Cloud security and compliance scope, responsibilities, and models
 
-The Cloud Security Alliance isn't setting out to create an entirely new taxonomy or reference model. Our objective is to distill and harmonize existing models, most notably the work in [NIST Special Publication 800-145][1] and [ISO/IEC 17788/9][2], and focus on what's most relevant to security professionals.
+The Cloud Security Alliance isn't setting out to create an entirely new taxonomy or reference model. Our objective is to distill and harmonize existing models, most notably the work in [NIST Special Publication 800-145][1], [ISO/IEC 17788 and ISO/IEC 17789][2], and focus on what's most relevant to security professionals.
 
 [1]: http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf
 [2]: http://www.iso.org/iso/catalogue_detail?csnumber=60544
@@ -44,7 +44,7 @@ A (slightly) simpler way of describing cloud is that it takes a set of resources
 
 A cloud can consist of nearly any computing resources — from our "compute" examples of processors and memory, to networks, storage, and higher level resources like databases and applications. For example, subscribing to a customer relations management application for 500 employees on a service shared by hundreds of other organizations is just as much cloud computing as launching 100 remote servers on a compute cloud.
 
->Definition: a *cloud consumer* is the person or organization requesting and using the resources, and the *cloud provider* is the person or organization who delivers it. We also sometimes use the terms *client* and *consumer* to refer to the cloud consumer, and *service* or simply *"cloud"* to describe the provider. [NIST 500-292][3] uses the term "cloud actor" and adds roles for cloud brokers, carriers, and auditors.
+>Definition: a *cloud consumer* is the person or organization requesting and using the resources, and the *cloud provider* is the person or organization who delivers it. We also sometimes use the terms *client* and *consumer* to refer to the cloud consumer, and *service* or simply *"cloud"* to describe the provider. [NIST 500-292][3] uses the term "cloud actor" and adds roles for cloud brokers, carriers, and auditors. ISO/IEC 17788 uses the terms cloud service customer, cloud service partner, and cloud service provider.
 
 [3]: http://www.nist.gov/customcf/get_pdf.cfm?pub_id=909505
 
@@ -52,11 +52,11 @@ The key techniques to create a cloud are *abstraction* and *orchestration*. We a
 
 This is the difference between cloud computing and traditional virtualization; virtualization abstracts resources, but it typically lacks the orchestration to pool them together and deliver them to customers on demand, instead relying on manual processes.
 
-Clouds are *multitenant* by nature. Multiple different consumer consistencies share the same pool of resources but are *segregated* and *isolated* from each other. Segregation allows the cloud provider to divvy up resources to the different groups, and isolation ensures they can't see or modify each others' assets. Multitenancy doesn't only apply across different organizations, it is also used to divvy up resources between different units in a single business or organization.
+Clouds are *multitenant* by nature. Multiple different consumer constituencies share the same pool of resources but are *segregated* and *isolated* from each other. Segregation allows the cloud provider to divvy up resources to the different groups, and isolation ensures they can't see or modify each others' assets. Multitenancy doesn't only apply across different organizations, it is also used to divvy up resources between different units in a single business or organization.
 
 ### 1.1.2 Definitional Model
 
-The Cloud Security Alliance uses the [NIST model for cloud computing][4] as our standard for defining cloud computing. The CSA also endorses the [ISO/IEC model][5] which is more in-depth, and also serves as a reference model. Throughout this domain we will  reference both.
+The Cloud Security Alliance (CSA) uses the [NIST model for cloud computing][4] as our standard for defining cloud computing. The CSA also endorses the [ISO/IEC model][5] which is more in-depth, and also serves as a reference model. Throughout this domain we will  reference both.
 
 [4]: http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf
 [5]: http://www.iso.org/iso/catalogue_detail?csnumber=60544
@@ -75,7 +75,7 @@ These are the characteristics that make a cloud a cloud. If something has these 
 
 * *Resource pooling* is the most fundamental characteristic, as discussed above. The provider abstracts resources and collects them into a pool, portions of which can be allocated to different consumers (typically based on policies).
 * Consumers provision the resources from the pool using *on-demand self service*. They manage their resources themselves, without having to talk to a human administrator.
-* *Broad network access* means all resources are available over the network, without any need for direct physical access.
+* *Broad network access* means all resources are available over a network, without any need for direct physical access, and the network is not necessarily part of the service.
 * *Rapid elasticity* allows consumers to expand or contract the resources they use from the pool (provisioning and deprovisioning), often completely automatically. This allows them to more closely match resource consumption with demand (for example, adding virtual servers as demand increases, then shutting them down when demand drops).
 * *Measured service* meters what is provided, to ensure consumers only use what they are allotted, and to, if needed, charge them for it. This is where the term *utility computing* comes from, since computing resources can now be consumed like water and electricity, with the client only paying for what they use.
 
@@ -89,7 +89,7 @@ NIST defines three *service models* which describe the different foundational ca
 * *Platform as a Service (PaaS)* abstracts and provides development or application platforms, such as databases, application platforms (e.g. a place to run Python, PHP, or other code), file storage and collaboration, or even proprietary application processing (such as machine learning, big data processing, or direct API access to features of a full SaaS application). The key differentiator is that, with PaaS, you don't manage the underlying servers, networks, or other infrastructure.
 * *Infrastructure as a Service (IaaS)* offers access to a resource pool of fundamental computing infrastructure, such as compute, network, or storage. 
 
-We sometimes call this the "SPI" tiers. 
+We sometimes call these the "SPI" tiers. 
 
 ISO/IEC uses a slightly more complex definition with a *cloud capabilities type* that maps closely to the SPI tiers (application, infrastructure, and platform capability types). It then expands into *cloud service categories* that are more-granular, such as Compute as a Service, Data Storage as a Service, and then even includes IaaS/PaaS/SaaS. 
 
@@ -135,11 +135,13 @@ Here is a simplified architectural example of a compute IaaS platform:
 
 ![Simplified IaaS Architecture](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.3.1-1.png?raw=true)
 
+> This is a very simple diagram showing the compute and storage controllers for orchestration, hypervisors for abstraction, and the relationship between the compute and storage pools. It omits many components, such as the network manager.
+
 A series of physical servers each run two components — a hypervisor (for virtualization), and the management/orchestration software to tie in the servers and connect them to the compute controller. A customer asks for an instance (virtual server) of a particular size and the cloud controller determines which server has the capacity, and allocates an instance of the requested size. 
 
 The controller then creates a virtual hard drive by requesting storage from the storage controller, who allocates storage from the storage pool, and connects it to the appropriate host server and instance over the network (a dedicated network for storage traffic). Networking is also allocated, including virtual network interfaces, addresses, and connecting them to the necessary virtual network.
 
-The controller then sends copy of the server image into the virtual machine, boots it, and configures it, creating an instance running in a virtual machine, with virtual networking and storage all properly configured. Once this entire process is complete, the metadata and connectivity information is brokered by the cloud controller and available to the consumer, who can now connect to the instance and log in.
+The controller then sends a copy of the server image into the virtual machine, boots it, and configures it, creating an instance running in a virtual machine, with virtual networking and storage all properly configured. Once this entire process is complete, the metadata and connectivity information is brokered by the cloud controller and available to the consumer, who can now connect to the instance and log in.
 
 #### 1.1.3.2 Platform as a Service
 
@@ -159,7 +161,7 @@ PaaS doesn't necessarily need to be built on top of IaaS; there is no reason it 
 
 #### 1.1.3.3 Software as a Service
 
-SaaS services are full, multi-tenant applications, with all the architectural complexities of any large software platform. Many SaaS providers build on top of IaaS and PaaS due to the increased agility, resiliency and (potential) economic benefits. 
+SaaS services are full, multi-tenant applications, with all the architectural complexities of any large software platform. Many SaaS providers build on top of IaaS and PaaS due to the increased agility, resilience and (potential) economic benefits. 
 
 Most modern cloud applications (SaaS or otherwise) use a combination of IaaS and PaaS; sometimes across different cloud providers. Many also tend to offer public APIs for some (or all) functionality. They often need these to support a variety of clients, especially web browsers and mobile applications. 
 
@@ -178,7 +180,7 @@ At a high level, both cloud and traditional computing adhere to a logical model 
 * *Infrastructure:* The core components of a computing system; compute, network, and storage. The foundation that every else is built on. The moving parts.
 * *Metastructure:*  The protocols and mechanisms that provide the interface between the infrastructure layer and the other layers. The glue that ties the technologies and enables management and configuration.
 * *Infostructure:* The data and information. Content in a database, file storage, etc.
-* *Applistructure:* The applications and services used to build them.
+* *Applistructure:* The applications deployed in the cloud and the underlying application services used to build them. For example, Platform as a Service features like message queues, artificial intelligence analysis, or notification services.
 
 ![Cloud Logical Model](https://github.com/cloudsecurityalliance/CSA-Guidance/blob/master/Images/1.1.4-1.png?raw=true)
 
@@ -196,7 +198,7 @@ For example, a cloud-native application that makes heavy utilization of a cloud 
 
 ### 1.2.1 Cloud Security and Compliance Scope and Responsibilities
 
-It might sound trite, but cloud security and compliance includes everything you do today, just in the cloud. All the traditional security domains remain, but the *nature of risks*, *roles and responsibilities*, and *implementation of controls* change, often dramatically. 
+It might sound trite, but cloud security and compliance includes everything a security team is responsible for today, just in the cloud. All the traditional security domains remain, but the *nature of risks*, *roles and responsibilities*, and *implementation of controls* change, often dramatically. 
 
 While the overall scope of security and compliance doesn't change, the pieces any given cloud actor is responsible for most certainly does. Think of it this way — cloud computing is a shared technology model, where different organizations are frequently responsible for implementing and managing different parts of the stack. Thus security responsibilities are also distributed across the stack, and thus across the organizations involved.
 
