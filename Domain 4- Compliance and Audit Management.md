@@ -24,7 +24,7 @@ Achieving and maintaining compliance with a plethora of modern regulations and s
 	
 	* Audits are a key tool for proving (or not) compliance. We also use audits and assessments to support non-compliance risk decisions. 
 	
-This section discusses these interrelated domains individually to better focus on the implications clodu computing has on each.
+This section discusses these interrelated domains individually to better focus on the implications cloud computing has on each.
 
 ### Compliance
 	

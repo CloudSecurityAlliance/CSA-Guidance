@@ -23,7 +23,7 @@ The information and advice in this domain primarily focuses on the second macro 
 
 All clouds utilize some form of virtual networking to abstract the physical network and create a network resource pool. Typically the cloud consumer provisions desired networking resources from this pool, which can then be configured within the limits of the virtualization technique used. For example, some cloud platforms only support allocation of IP addresses within particular subnets, while others allow the cloud consumer the capability to provision entire Class B virtual networks and completely define the subnet architecture.
 
-If you are a cloud provider (including managing a private cloud), physical segregation of networks is important for both operational and security reasons. We most commonly see at least three different networks:
+If you are a cloud provider (including managing a private cloud), physical segregation of networks composing your cloud is important for both operational and security reasons. We most commonly see at least three different networks which are isolated onto dedicated hardware since there is no functional or traffic overlap:
 
 * The service network for communications between virtual machines and the Internet. This builds the network resource pool for the cloud consumers.
 * The storage network to connect virtual storage to virtual machines. 
@@ -49,7 +49,7 @@ On the surface, an SDN may look like a regular network to a cloud consumer, but 
 
 The lack of direct management of the underlying physical network changes common network practices for the cloud consumer and provider. The most commonly used network security patterns rely on control of the physical communication paths and insertion of security appliances. This isn't possible for cloud customers, since they only operate at a virtual level.
 
-Customer security tools need to rely on an in-line virtual appliance, or a software agent installed in instances. This creates either a chokepoint or increases processor overhead, so be sure you really need that level of monitoring before implementing. Some cloud providers may offer some level of built-in network monitoring (and you have more options with private cloud platforms) but this isn't typically to the same degree as when sniffing a physical network.
+Traditional Network Intrusion Detection Systems (NIDS),  where communications between hosts are are mirrored and inspected by the virtual or physical IDS will not be supported in cloud environments; customer security tools need to rely on an in-line virtual appliance, or a software agent installed in instances. This creates either a chokepoint or increases processor overhead, so be sure you really need that level of monitoring before implementing. Some cloud providers may offer some level of built-in network monitoring (and you have more options with private cloud platforms) but this isn't typically to the same degree as when sniffing a physical network.
 
 ### Challenges of virtual appliances
 
@@ -66,7 +66,7 @@ Since physical appliances can't be inserted (except by the cloud provider) they 
 * Cloud application components tend to be more distributed to improve resiliency and, due to auto-scaling, virtual servers may have shorter lives and be more prolific. This changes how security policies need to be designed.
 	* This induces that very high rate of change that security tools must be able to manage (e.g. Servers with a lifespan of less than an hour).
 	* IP addresses will change far more quickly than on a traditional network, which security tools must account for. Ideally they should identify assets on the network by a unique ID, not an IP address or network name.
-	* Assets are less likely to exist at static IP addresses. Different assets may share the same IP address within a short period of time. Assets within a single application tier will often be located on multiple subnets for resiliency, further complicating IP-based security policies. On the upside, cloud architectures skew towards fewer services per server, which improves your ability to define restrictive firewall rules. Instead of a stack of services on a single virtual machine—as on physical servers where you need to maximize the capital investment in the hardware—it is common to run a much smaller set of services, or even a single service, on a virtual machine.
+	* Assets are less likely to exist at static IP addresses. Different assets may share the same IP address within a short period of time. Alerts and the Incident Response lifecycle may have to be modified to ensure that the alert is actionable in such a dynamic environment. Assets within a single application tier will often be located on multiple subnets for resiliency, further complicating IP-based security policies. Due to auto-scaling, assets may also be ephemeral, existing for hours or even minutes. On the upside, cloud architectures skew towards fewer services per server, which improves your ability to define restrictive firewall rules. Instead of a stack of services on a single virtual machine—as on physical servers where you need to maximize the capital investment in the hardware—it is common to run a much smaller set of services, or even a single service, on a virtual machine.
         
 ### SDN security benefits       
         
@@ -78,7 +78,7 @@ It becomes possible to build out as many isolated networks as you need without c
 * SDN firewalls (e.g, security groups) can apply to assets based on more flexible criteria than hardware-based firewalls, since they aren't limited based on physical topology. (Note that this is true of many types of software firewalls, but is distinct from hardware firewalls). SDN firewalls are typically policy sets that define ingress and egress rules that can apply to single assets or groups of assets, regardless of network location (within a given virtual network). For example, you can create a set of firewall rules that apply to any asset with a particular tag. Keep in mind this gets slightly difficult to discuss, since different platforms use different terminology and have different capabilities to support this kind of capability, so we are trying to keep things at a conceptual level.
 	* Combined with the cloud platform's orchestration layer, this enables very dynamic and granular combinations and policies with less management overhead than the equivalent using a traditional hardware or host-based approaches. For example, if virtual machines in an auto-scale group are automatically deployed in multiple subnets and load balanced across them, then you can create a firewall ruleset that applies to these instances, regardless of their subnet or IP address. It is a key enabling feature of secure cloud networks that use architectures quite differently from traditional computing.
 	* Default deny is often the starting point, and you are required to open connections from there, which is the opposite of most physical networks.
-		* Think of it as the granularity of a host firewall with the better manageability of a network appliance. Host firewalls have two issues; they are difficult to manage at scale, and if the system they are on is compromised they are easy to alter and disable. On the other hand it is cost-prohibitive to route all internal traffic, even between peers on a subnet, through a network firewall. Software firewalls, such as security groups, are managed outside a system yet apply to each system, with not additional hardware costs or complex provisioning needed. Thus it is trivial to do things like isolate every single virtual machine on the same virtual subnet.
+		* Think of it as the granularity of a host firewall with the better manageability of a network appliance. Host firewalls have two issues; they are difficult to manage at scale, and if the system they are on is compromised they are easy to alter and disable. On the other hand it is cost-prohibitive to route all internal traffic, even between peers on a subnet, through a network firewall. Software firewalls, such as security groups, are managed outside a system yet apply to each system, without additional hardware costs or complex provisioning needed. Thus it is trivial to do things like isolate every single virtual machine on the same virtual subnet.
 		* As briefly mentioned above, firewall rules can be based on other criteria, such as tags. Note that while the potential is there, the actual capabilities depend on the platform. Just because a cloud network is SDN-based doesn't mean it actually conveys any security benefits. 
 		* Many network attacks are eliminated by default (depending on your platforms) such as ARP spoofing and other lower level exploits, beyond merely eliminating sniffing. This is due to the inherent nature of the SDN and application of more software-based rules and analysis in moving packets.
         * It is possible to encrypt packets as they are encapsulated.
@@ -93,7 +93,7 @@ It is absolutely critical to maintain segregation and isolation for the multi-te
 
 Providers must also expose security controls to the cloud consumers so they can properly configure and manage their network security.
 
-Finally, providers are responsible for implementing perimeter security that protects the environment, but minimizes impact on customer workloads. For example, DDoS and baseline IPS to filter out hostile traffic before it affects the cloud's consumers.
+Finally, providers are responsible for implementing perimeter security that protects the environment, but minimizes impact on customer workloads. For example, DDoS and baseline IPS to filter out hostile traffic before it affects the cloud's consumers. Another consideration is to ensure that any potentially sensitive information is scrubbed when a virtual instance is released back to the hypervisor, to ensure the information is not able to be read by  another customer when the drive space is provisioned.
 
 ### Hybrid cloud considerations
 
@@ -131,7 +131,7 @@ Containers are newer, with differing isolation capabilities that are very platfo
 This is a more complex category that covers workloads running on a shared platform that *aren't* virtual machines or containers, such as logic/procedures running on a shared database platform. Imagine a stored procedure running inside a multi-tenant database, or a machine learning job running on a machine learning Platform as a Service. Isolation and security are totally the responsibility of the platform provider, although the provider may expose certain security options and controls.
 
 * Serverless computing
-Serverless is a broad category that refers to any situation where the cloud consumer doesn't manage any of the underlying hardware or virtual machines, and just accesses exposed functions. For example, there are serverless platforms for directly executing application code. Under the hood these still utilize capabilities like containers, virtual machines, or specialized hardware platforms. From a security perspective serverless is merely a combined term that covers containers and platform-based workloads, where the cloud provider manages all the underlying layers.
+Serverless is a broad category that refers to any situation where the cloud consumer doesn't manage any of the underlying hardware or virtual machines, and just accesses exposed functions. For example, there are serverless platforms for directly executing application code. Under the hood these still utilize capabilities like containers, virtual machines, or specialized hardware platforms. From a security perspective serverless is merely a combined term that covers containers and platform-based workloads, where the cloud provider manages all the underlying layers, including foundational security functions and controls.
 
 ### How cloud changes workload security
 
@@ -163,7 +163,7 @@ Immutable workloads enable significant security benefits:
 
 Immutable does add some requirements:
 
-* You need a consistent image creation process and the automation to support updating deployments. 
+* You need a consistent image creation process and the automation to support updating deployments. These new images must be produced on a regular basis to account for patch and malware signature updates.
 
 * Security testing must be integrated into the image creation and deployment process, including source code tests and, if using virtual machines or standard containers, vulnerability assessments.
 
@@ -185,25 +185,25 @@ Some standard workload controls aren't as viable in cloud workloads (e.g. runnin
 
 * The management plane of the agent must itself also operate at the speed of auto-scaling and support elasticity (e.g. be able to keep up with incredibly dynamic IP addressing, such as the same address used by multiple workloads within a single hour). Traditional tools aren't normally designed for this degree of velocity, creating the same issue as we discussed with network security and firewalls.
 
-* Agents shouldn't increase attack surface due to communications/networking or other requirements. While this is always true, there is a greater likelihood of an agent becoming a security risk in cloud for a few reasons:
+* Agents shouldn't increase attack surface due to communications/networking or other requirements that increase the attack surface. While this is always true, there is a greater likelihood of an agent becoming a security risk in cloud for a few reasons:
 	* We have a greater ability to run immutable systems, and an agent, like any piece of software, opens up additional attack surface, especially if it ingests configuration changes and signatures that could be used as an attack vector.
 	* In cloud we also tend to run fewer different services with a smaller set of networking ports on any given virtual machine (or container), as compared to a physical server. Some agents require opening up additional firewall ports, which increases the network attack surface.
 	* This doesn't mean agents always create new security risks, but the benefits need to be balanced before simply assuming the security upside.
 
 * File integrity monitoring can be an effective means of detecting unapproved changes to running immutable instances. Immutable workloads typically require fewer additional security tools, due to their hardened nature. They are locked down more than the usual servers and tend to run a smaller set of services. File integrity monitoring, which tends to be very lightweight, can be a good security control for immutable workloads since you should essentially have zero false positives by their unchanging nature.
 
-* Long-running VMs that still run standard security controls may be more isolated on the network, changing how they are managed. You might experience difficulty in connecting your management tool to a virtual machine running in a private network subnet. While you can technically run the management tool in the same subnet, this could increase costs significantly and be more difficult to manage.
+* Long-running VMs that still run standard security controls may be isolated on the network, changing how they are managed. You might experience difficulty in connecting your management tool to a virtual machine running in a private network subnet. While you can technically run the management tool in the same subnet, this could increase costs significantly and be more difficult to manage.
 
-* Cloud workloads running in isolation are typically less resilient than on physical infrastructure, due to the abstraction. Disaster recovery for these is extremely important.
+* Cloud workloads running in isolation are typically less resilient than on physical infrastructure, due to the abstraction. Providing disaster recovery for these is extremely important.
 
 ### Changes to workload security monitoring and logging
 
 Security logging/monitoring is more complex in cloud computing:
 	
-* IP addresses in logs won't necessarily reflect a particular workflow since multiple virtual machines may share the same IP address over a period of time, and some workloads like containers and serverless may not have a recognizable IP address at all. Thus you need to collect some other unique identifiers in the logs to be assured you know what the log entries actual refer to.
+* IP addresses in logs won't necessarily reflect a particular workflow since multiple virtual machines may share the same IP address over a period of time, and some workloads like containers and serverless may not have a recognizable IP address at all. Thus you need to collect some other unique identifiers in the logs to be assured you know what the log entries actual refer to. These unique identifiers need to account for ephemeral systems which may only be active for a short period of time.
 
 * Logs need to be offloaded and collected externally more quickly due to the higher velocity of change in cloud. You can easily lose logs in an auto-scale group if they aren't collected before the cloud controller shuts down an unneeded instance.
-	* Logging architectures need to account for cloud storage and networking costs. For example, sending all logs from instances in a public cloud to an on-premises SIEM may be cost prohibitive, due to the extra Internet networking fees.
+	* Logging architectures need to account for cloud storage and networking costs. For example, sending all logs from instances in a public cloud to an on-premises SIEM may be cost prohibitive, due to the additional internal storage and extra Internet networking fees.
         
 ### Changes to vulnerability assessment
 
@@ -225,6 +225,8 @@ Although part of infrastructure, we cover storage and data security in much more
 
 * Know the infrastructure security of your provider or platform.
     * In the shared security model, the provider (or whoever maintains the private cloud platform) has the burden of ensuring the underlying physical, abstraction, and orchestration layers of the cloud are secure.
+  * Review compliance certifications and attestations
+		* Check industry-standard and industry-specific compliance certifications and attestations on a regular basis for having the assurance that your provider is following cloud infrastructure best-practices and regulations.
 * Network
     * Prefer SDN when available.
     * Use SDN capabilities for multiple virtual networks and multiple cloud accounts/segments to increase network isolation.
