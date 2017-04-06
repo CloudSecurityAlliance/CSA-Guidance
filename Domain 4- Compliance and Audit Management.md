@@ -6,7 +6,9 @@ Organizations face new challenges as they migrate from traditional data centers 
 
 In addition to providers and customers, regulators and auditors are also adjusting to the new world of cloud computing.  Few existing regulations were written to account for virtualized environments or cloud deployments.  A cloud consumer can be challenged to show auditors that the organization is in compliance.  Understanding the interaction of cloud computing and the regulatory environment is a key component of any cloud strategy.  Cloud customers, auditors, and providers must consider and understand the following:
 
-* Regulatory implications for using a particular cloud service or providers, giving particular attention to any cross-border or multi-jurisdictional issues when applicable.* Assignment of compliance responsibilities between the provider and customer, including indirect providers (i.e., the cloud provider of your cloud provider). This includes the concept of *compliance inheritance* where a provider may have parts of their service certified as compliant which removes this from the audit scope of the customer, but the customer is still responsible for the compliance of everything they build on top of the provider.* Provider capabilities for demonstrating compliance, including document generation, evidence production, and process compliance, in a timely manner.
+* Regulatory implications for using a particular cloud service or providers, giving particular attention to any cross-border or multi-jurisdictional issues when applicable.
+* Assignment of compliance responsibilities between the provider and customer, including indirect providers (i.e., the cloud provider of your cloud provider). This includes the concept of *compliance inheritance* where a provider may have parts of their service certified as compliant which removes this from the audit scope of the customer, but the customer is still responsible for the compliance of everything they build on top of the provider.
+* Provider capabilities for demonstrating compliance, including document generation, evidence production, and process compliance, in a timely manner.
 
 Some additional cloud-specific issues to pay particular attention to include:
 
@@ -99,6 +101,7 @@ It's important to remember that attestations and certifications are point-in-tim
 	* Ensure they understand what artifacts of compliance the provider offers, and effectively collect and manage those artifacts.
 		* Create and collect their own artifacts when the provider's artifacts are not sufficient.
 	* Keep a register of cloud providers used, relevant compliance requirements, and current status. The Cloud Security Alliance Cloud Controls Matrix can support this activity.
+	* Understand and mitigate the gaps between the providers artifacts and the customer's organizational (enterprise) compliance requirements. Design-out gaps as necessary. Understand (and accept) the residual risk position, once all controls have been applied.
 
 
 
