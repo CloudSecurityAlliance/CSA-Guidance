@@ -9,7 +9,7 @@ Security as a Service (SecaaS) providers offer security capabilities *as a cloud
 * SecaaS includes security products or services that are delivered as a cloud service.
 * To be considered SecaaS, the services must still meet the essential NIST characteristics for cloud computing, as defined in Domain 1.
 
-This section highlights some of the more common categories in the market, but SecaaS is constantly evolving and the descriptions and following list should not be considered canonical.
+This section highlights some of the more common categories in the market, but SecaaS is constantly evolving and the descriptions and following list should not be considered canonical. There are examples and services not covered in this document, and more enter the market on a constant basis.
 
 ## Overview
 

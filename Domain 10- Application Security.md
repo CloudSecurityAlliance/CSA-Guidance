@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Application security encompasses an incredibly complex and large body of knowledge: everything from early design and threat-modeling down to maintaining and defending production applications. Application security is also evolving at an incredibly rapid pace as the fundamentals of application development continue to progress and embrace new processes, patterns, and technologies. Cloud computing is one of the biggest drivers of these advancements and that results in corresponding pressure to evolve the state of application security, in order to ensure that this progress continues as safely as possible.
+Application security encompasses an incredibly complex and large body of knowledge: everything from early design and threat-modeling down to maintaining and defending production applications. Application security is also evolving at an incredibly rapid pace as the practice of application development continue to progress and embrace new processes, patterns, and technologies. Cloud computing is one of the biggest drivers of these advancements and that results in corresponding pressure to evolve the state of application security, in order to ensure that this progress continues as safely as possible.
 
-This section of the guidance is intended for software development and IT teams who want to securely build and deploy applications in cloud computing environments, specifically PaaS and IaaS (and many of these techniques are used to underpin secure SaaS applications). It focuses on:
+This section of the guidance is intended for software development and IT teams who want to securely build and deploy applications in cloud computing environments, specifically PaaS and IaaS (and many of the techniques in this section are used to underpin secure SaaS applications). It focuses on:
 
 * How application security differs in cloud computing.
 * Reviewing secure software development basics and how those change in the cloud.
@@ -16,7 +16,7 @@ Cloud computing mostly brings security benefits to applications, but as with mos
 
 ### Opportunities
 
-* *Higher baseline security.* Cloud providers, especially major IaaS and PaaS providers, have significant economic incentives to maintain higher baseline security than most organizations. In a cloud environment, major baseline security failures completely undermine the trust that a public cloud provider needs in order to maintain relationships with its customer base. Cloud providers are also subject to a wider range of security requirements, in order to meet all the regulatory and industry compliance baselines needed to attract customers from those verticals. 
+* *Higher baseline security.* Cloud providers, especially major IaaS and PaaS providers, have significant economic incentives to maintain higher baseline security than most organizations. In a cloud environment, major baseline security failures completely undermine the trust that a public cloud provider needs in order to maintain relationships with its customer base. Cloud providers are also subject to a wider range of security requirements, in order to meet all the regulatory and industry compliance baselines needed to attract customers from those verticals. These combine to strongly motivate cloud providers to maintain extremely high levels of security.
 
 * *Responsiveness.* APIs and automation provide extensive flexibility to build more-responsive security programs at a lower cost than in traditional infrastructure. For example, changing firewall rules or deploying new servers with updated code can be handled with a few API calls or through automation.
 
@@ -24,21 +24,23 @@ Cloud computing mostly brings security benefits to applications, but as with mos
 
 * *Independent virtual machines.* Security is further enhanced by the use of micro-service architectures. Since cloud doesn't require the consumer to optimize the use of physical servers, a requirement that often results in deploying multiple application components and services on a single system, developers can instead deploy more, smaller virtual machines, each dedicated to a function or service. This reduces the attack surface of the individual virtual machines and supports more granular security controls.
 
-* *Elasticity.* Elasticity enables greater use of immutable infrastructure. When using elasticity tools like auto-scale groups each production system is launched dynamically, based on a baseline image and may be automatically deprovisioned without human interaction. Thus, core operational requirements mean you never want to allow an administrator to log into a system and make changes, since they will be lost during a normal auto-scale activity. This enables the use of *immutable* servers where remote administration is completely disabled. We describe immutable servers and infrastructure in more detail in Domain 7.
+* *Elasticity.* Elasticity enables greater use of immutable infrastructure. When using elasticity tools like auto-scale groups each production system is launched dynamically, based on a baseline image, and may be automatically deprovisioned without human interaction. Thus, core operational requirements mean you never want to allow an administrator to log into a system and make changes, since they will be lost during a normal auto-scale activity. This enables the use of *immutable* servers where remote administration is completely disabled. We describe immutable servers and infrastructure in more detail in Domain 7.
 
 * *DevOps.* DevOps is a new application development methodology and philosophy focused on automation of application development and deployment. DevOps opens up many opportunities for security to improve code hardening, change management and production application security, and even enhance security operations in general.
 
+* *Unified interface.* A unified interface (management interface and APIs) for infrastructure and application services (when using PaaS) provides a more-comprehensive view and management compared to the traditional disparate systems and devices (load balancers, servers, network devices, firewalls, ACLs, etc), often managed by different groups. This creates opportunities to reduce security failures due to lack of communication or full-stack visibility.
+
 ### Challenges
 
-* *Limited visibility.* Visibility and the availability of monitoring and logging are impacted, requiring new approaches to gathering security-related data. This is especially true when using PaaS where commonly available logs, like system or network logs, are often no longer accessible. 
+* *Limited detailed visibility.* Visibility and the availability of monitoring and logging are impacted, requiring new approaches to gathering security-related data. This is especially true when using PaaS where commonly available logs, like system or network logs, are often no longer accessible to the cloud consumer, such as the underlying server logs for a PaaS component. 
 
 * *Increased application scope.* The management plane/metastructure security directly affects the security of any applications associated with that cloud account. Developers and operations will also likely need access to the management plane, as opposed to always going through a different team. Data and sensitive information is also potentially exposable within the management plane. Lastly, modern cloud applications often connect with the management plane to trigger a variety of automated actions, especially when PaaS is involved. For all those reasons management plane security is now within scope of the application's security and a failure on either side could bridge into the other. 
 
-* *New threat models.* The cloud provider relationship and the shared security model will need to be included in the threat model as well as any operational and incident response plans.
+* *Changing threat models.* The cloud provider relationship and the shared security model will need to be included in the threat model as well as any operational and incident response plans. Threat models also need to adapt to reflect the technical differences of the cloud provider or platform in use.
 
 * *Reduced transparency.* There may be less transparency as to what is going on within the application, especially as it integrates with external services. For example, you rarely know the entire set of security controls for an external PaaS service integrated with your application.
 
-Overall, there will be changes due to the shared security model. Some of these are directly tied to governance and operations, but there are many more in terms of how you think and plan for the application's security.
+Overall, there will be changes to application security due to the shared security model. Some of these are directly tied to governance and operations, but there are many more in terms of how you think and plan for the application's security.
 
 ## Overview
 
@@ -46,7 +48,7 @@ Due to the broad nature of application security and the many different skill set
 
 * *The Secure Software Development Lifecycle:* How cloud computing affects application security, from design to deployment.
 * *Design and Architecture:* Trends in designing applications for cloud computing that affect and can even improve security.
-* *DevOps and Continuous Integration/Continuous Deployment (CI/CD):* DevOps and CI/CD are very frequently used in both the development and deployment of cloud applications, and are becoming the dominant model. They bring new security considerations, and again, opportunities to improve security over more manual development and deployment patterns.
+* *DevOps and Continuous Integration/Continuous Deployment (CI/CD):* DevOps and CI/CD are very frequently used in both the development and deployment of cloud applications, and are becoming the dominant model. They bring new security considerations, and again, opportunities to improve security over more manual development and deployment patterns like waterfall.
 
 ### Introduction to the Secure Software Development Lifecycle and Cloud Computing
 
@@ -83,7 +85,7 @@ There are five main phases in secure application design and development, all of 
 				
 * *Training:* Three different roles will require two new categories of training. Development, operations, and security should all receive additional training on cloud security fundamentals (which are not provider specific) as well as appropriate technical security training on any specific cloud providers and platforms used on their projects. There is typically greater developer and operations involvement in directly architecting and managing the cloud infrastructure, so baseline security training that's specific to the tools they will use is essential.
 
-* *Define:* The organization determines the approved architectures or features/tools for the provider, security standards, and other requirements. This might be tightly coupled to compliance requirements, listing, for example, what kind of data is allowed onto which cloud services (including individual services within a larger provider). At this step the deployment processes should also be defined, although that is sometimes finalized later in a project. Security standards should include the initial entitlements for who is allowed to manage which services in the cloud provider, which is often independent of the actual application architecture. It should also include pre-approved tools, technologies, configurations, and even design patterns.
+* *Define:* The cloud consumer determines the approved architectures or features/tools for the provider, security standards, and other requirements. This might be tightly coupled to compliance requirements, listing, for example, what kind of data is allowed onto which cloud services (including individual services within a larger provider). At this step the deployment processes should also be defined, although that is sometimes finalized later in a project. Security standards should include the initial entitlements for who is allowed to manage which services in the cloud provider, which is often independent of the actual application architecture. It should also include pre-approved tools, technologies, configurations, and even design patterns.
 
 * *Design:* During the application design process, especially when PaaS is involved, the focus for security in cloud is on architecture, the cloud provider's baseline capabilities, cloud provider features, and automating and managing security for deployment and operations. We find that there are often significant security benefits to integrating security into the application architecture since there are opportunities to leverage the provider's own security capabilities. For example, inserting a serverless load balancer or message queue could completely block certain network attack paths. This is also where you perform threat modeling, which must also be cloud and provider/platform specific. 
 
@@ -118,7 +120,7 @@ In both cases production is tested less, or not at all, since it should be immut
 As with vulnerability assessment there will almost certainly be limits on performing penetration tests without the permission of the cloud provider. The CSA recommends adapting penetration testing for cloud using the following guidelines:
 
 * Use a testing firm that has experience on the cloud provider where the application is deployed.
-* Include developers and cloud administrators within the scope of the test. Many cloud breaches attack those who maintain the cloud, not the application on the cloud itself.
+* Include developers and cloud administrators within the scope of the test. Many cloud breaches attack those who maintain the cloud, not the application on the cloud itself. This includes the cloud management plane.
 * If the application is a multi-tenant app allow the penetration testers authorized access as a tenant to see if they can compromise the tenancy isolation and use their access to break into another tenant's environment or data.
 
 #### Deployment pipeline security
