@@ -9,9 +9,9 @@ We always have a management plane, the tools and interfaces we use to manage our
 
 Thus gaining access to the management plane is like gaining unfettered access to your data center, unless you put the proper security controls in place to limit who can access the management plane and what they can do within it. 
 
-To think about it in security terms, the management plane consolidates many things we previously managed through separate systems and tools, and then makes them Internet-accessible with a single set of authentication credentials. This isn't a net loss for security—there are also gains—but it is most definitely different, and it impacts how we need to evaluate and manage security. 
+To think about it in security terms, the management plane consolidates many things we previously managed through separate systems and tools, and then makes them Internet-accessible with a single set of authentication credentials. This isn't a net loss for security — there are also gains — but it is most definitely different, and it impacts how we need to evaluate and manage security. 
 
-Centralization also brings security beneifts. There are no hidden resources: you always know where everything *you own* is at all times, and how it is configured. This is an emergent property of both broad network access and metered service. The cloud controller always needs to know what resources are in the pool, out of the pool, and where they are allocated.
+Centralization also brings security benefits. There are no hidden resources, you always know where everything *you own* is at all times, and how it is configured. This is an emergent property of both broad network access and metered service. The cloud controller always needs to know what resources are in the pool, out of the pool, and where they are allocated.
 
 This doesn't mean that all the assets you put into the cloud are equally managed. The cloud controller can't peer into running servers or open up locked files, nor understand the implications of your specific data and information.
 
@@ -22,7 +22,7 @@ In the end, this is an extension of the shared responsibility model discussed in
 * The cloud consumer is responsible for properly configuring their use of the management plane, as well as for securing and managing their credentials.
 
 ### Business continuity and disaster recovery in the cloud
-	
+ 
 BC/DR is just as important in cloud computing as it is for any other technology. Aside from the differences resulting from the potential involvement of a third-party provider (something we often deal with in BC/DR), there are additional considerations due to the inherent differences when using shared resources.
 
 The three main aspects of BC/DR in the cloud are: 
@@ -41,16 +41,16 @@ This mostly applies to compute, networking, and storage, since those allow close
 
 However, this means that cloud providers tend to offer options to improve resiliency, often beyond that which is attainable (for equivalent costs) in traditional infrastructure. For example, by enabling multiple "zones" where you can deploy virtual machines within an auto-scaled group that encompasses physically distinct data centers for high-availability. Your application can be balanced across zones so that if an entire zone goes down your application still stays up. This is quite difficult to implement in a traditional data center, where it typically isn't cost-effective to build multiple, isolated physical zones across which you can deploy a cross-zone load-balanced application with automatic failover.
 
-But this extra resiliency is only true if you architect to leverage these capabilities. Deploying your application all in one zone, or even on a single virtual machine in a single zone, is likely to be less resilient than deploying on a single, well-maintained physical server.
+But this extra resiliency is only achievable if you architect to leverage these capabilities. Deploying your application all in one zone, or even on a single virtual machine in a single zone, is likely to be less resilient than deploying on a single, well-maintained physical server.
 
 This is why "lift and shift" wholesale migration of existing applications without architectural changes can *reduce* resiliency. Existing applications are rarely architected and deployed to work with these resiliency options, yet straight-up virtualization and migration without changes can increase the odds of individual failures. 
 
-The ability to manage is higher with IaaS and much lower with SaaS, just like security. For SaaS you rely on the cloud provider keeping the entire application service up. With IaaS you can architect *your* application to account for failures, putting more responsibility in your hands. PaaS, as usual, is in the middle—some PaaS may have resiliency options that you can configure, while other platforms are completely in the hands of the provider.
+The ability to manage is higher with IaaS and much lower with SaaS, just like security. For SaaS you rely on the cloud provider keeping the entire application service up. With IaaS you can architect *your* application to account for failures, putting more responsibility in your hands. PaaS, as usual, is in the middle — some PaaS may have resiliency options that you can configure, while other platforms are completely in the hands of the provider.
 
 Overall, a risk-based approach is key:
 * Not all assets need equal continuity.
-* Don't drive yourself crazy by planning for full provider outages just because of the perceived loss of control. Look at historical performance,
-* Strive to design for RTOs and RPOs equivalent to those on traditional infrastructure,
+* Don't drive yourself crazy by planning for full provider outages just because of the perceived loss of control. Look at historical performance.
+* Strive to design for RTOs and RPOs equivalent to those on traditional infrastructure.
 
 ## Overview
 
@@ -60,7 +60,7 @@ The management plane refers to the interfaces for managing your assets in the cl
 
 The management plane controls and configures the metastructure (defined in Domain 1), and is also part of the metastructure itself. As a reminder, cloud computing is taking physical assets (like networks and processors) and using them to build resource pools. Metastructure is the glue and guts to create, provision, and deprovision the pools. The management plane includes the interfaces for building and managing the cloud itself, but also the interfaces for cloud consumers to manage their own allocated resources of the cloud.
 
-The management plane is a key tool for enabling and enforcing separation and isolation in multitenancy. Limiting who can do what with the APIs is one important means for segregating out customers, or different users within a single tenant.
+The management plane is a key tool for enabling and enforcing separation and isolation in multi-tenancy. Limiting who can do what with the APIs is one important means for segregating out customers, or different users within a single tenant.
 
 #### Accessing the management plane
 
@@ -72,7 +72,7 @@ Cloud providers and platforms will also often offer Software Development Kits (S
 
 As mentioned, most web consoles offer a user interface for the same APIs that you can access directly. Although, depending on the platform or provider's development process, you may sometimes encounter a mismatch where either a web feature or an API call appear on one before the other.
 
-* *APIs* are typically [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) for cloud services, since REST is easy to implement across the Internet. REST APIs have become the standard for web-based services since they run over HTTP/S and thus work well across diverse environments.
+* *APIs* are typically [REST][1] for cloud services, since REST is easy to implement across the Internet. REST APIs have become the standard for web-based services since they run over HTTP/S and thus work well across diverse environments.
 
 These can use a variety of authentication mechanisms, as there is no single standard for authentication in REST. HTTP request signing and OAuth are the most common; both of these leverage cryptographic techniques to validate authentication requests.
 
@@ -92,7 +92,7 @@ Your platform or provider may support lower-level administrative accounts that c
 
 Both providers and consumers should consistently only allow the least privilege required for users, applications, and other management plane usage. 
 
-All privileged user accounts should use multifactor authentication (MFA). If possible, *all* cloud accounts (even individual user accounts) should use MFA. It's one of the single most effective security controls to defend against a wide range of attacks. This is also true regardless of the service model: MFA is just as important for SaaS as it is for IaaS.
+All privileged user accounts should use multi-factor authentication (MFA). If possible, *all* cloud accounts (even individual user accounts) should use MFA. It's one of the single most effective security controls to defend against a wide range of attacks. This is also true regardless of the service model: MFA is just as important for SaaS as it is for IaaS.
 
 (See the IAM domain for more information on IAM and the role of federation and strong authentication, much of which applies to the cloud management plane.)
 
@@ -120,15 +120,15 @@ Also similar to security, customers have more control and responsibility in IaaS
 
 BC/DR must take a risk-based approach. Many BC options may be cost prohibitive in the cloud, but may also not be necessary. This is no different than in traditional data centers, but it isn't unusual to want to over-compensate when losing physical control. For example, the odds of a major IaaS provider going out of business or changing their entire business model is low, but this isn't all that uncommon for a smaller venture-backed SaaS provider.
 
-* Ask the provider for outage statistics over time since this can help inform your risk decisions. 
+* Ask the provider for outage statistics over time since this can help inform your risk decisions.
 
-* Remember that capabilities vary between providers and should be included in the vendor selection process. 
-        
+* Remember that capabilities vary between providers and should be included in the vendor selection process.
+
 #### Business continuity within the cloud provider
 
 When you deploy assets into the cloud you can't assume the cloud will always be there, or always work the way you expect. Outages and issues are no more or less common than with any other technology, although the cloud can be overall more resilient when the provider includes mechanisms to better enable building resilient applications. 
 
-This is a key point we need to spend a little more time on: As we've mentioned in a few places the very nature of virtualizing resources into pools typically creates *less* resiliency for any single asset, like a virtual machine. On the other hand, abstracting resources and managing everything through software opens up flexibility to more-easily enable resiliency features like durable storage and cross-geographic load balancing. 
+This is a key point we need to spend a little more time on: As we've mentioned in a few places the very nature of virtualizing resources into pools typically creates *less* resiliency for any single asset, like a virtual machine. On the other hand, abstracting resources and managing everything through software opens up flexibility to more easily enable resiliency features like durable storage and cross-geographic load balancing. 
 
 There is a huge range of options here, and not all providers or platforms are created equal, but you shouldn't assume that "the cloud" as a general term is more or less resilient than traditional infrastructure. Sometimes it's better, sometimes it's worse, and knowing the difference all comes down to your risk assessment and *how* you use the cloud service. 
 
@@ -142,7 +142,7 @@ BC/DR must account for the entire logical stack:
 
 Since cloud configurations are controlled by software, these configurations should be backed up in a restorable format. This isn't always possible, and is pretty rare in SaaS, but there are tools to implement this in many IaaS platforms (including third-party options) using *Software Defined Infrastructure*. 
 
-*Software Defined Infrastructure* allows you to create an infrastructure template to configure all or some aspects of a cloud deployment. These templates are then translated natively by the cloud platform or into API calls that orchestrates the configuration. 
+*Software Defined Infrastructure* allows you to create an infrastructure template to configure all or some aspects of a cloud deployment. These templates are then translated natively by the cloud platform or into API calls that orchestrate the configuration. 
 
 This should include controls like IAM and logging, not merely architecture, network design, or service configurations.
 
@@ -150,7 +150,7 @@ This should include controls like IAM and logging, not merely architecture, netw
 
 As mentioned, any provider will offer features to support higher availability than can comparably be achieved in a traditional data center for the same cost. But these only work if you adjust your architecture. "Lifting and shifting" applications to the cloud without architectural adjustments or redesign will often result in lower availability.
 
-Be sure and understand the cost model for these features—especially for implementing them across the provider's physical locations/regions, where the cost can be high. Some assets and data must be converted to work across cloud locations/regions, for example, custom machine images used to launch servers. These assets must be included in plans.
+Be sure and understand the cost model for these features, especially for implementing them across the provider's physical locations/regions, where the cost can be high. Some assets and data must be converted to work across cloud locations/regions, for example, custom machine images used to launch servers. These assets must be included in plans.
 
 * Infostructure
 
@@ -199,24 +199,26 @@ If you are providing services to others, be aware of contractual requirements, i
 ## Recommendations
 
 * Management plane (metastructure) security
-    * Ensure there is strong perimeter security for API gateways and web consoles.
-    * Use strong authentication and MFA.
-    * Maintain tight control of primary account holder/root account credentials and consider dual-authority to access them.
-        * Establishing multiple accounts with your provider will help with account granularity and to limit blast radius (with IaaS and PaaS).
-    * Use separate super administrator and day-to-day administrator accounts instead of root/primary account holder credentials.
-    * Consistently implement least privilege accounts for metastructure access.
-        * This is why you separate development and test accounts with your cloud provider.
-    * Enforce use of MFA whenever available.
+	* Ensure there is strong perimeter security for API gateways and web consoles.
+	* Use strong authentication and MFA.
+	* Maintain tight control of primary account holder/root account credentials and consider dual-authority to access them.
+		* Establishing multiple accounts with your provider will help with account granularity and to limit blast radius (with IaaS and PaaS).
+	* Use separate super administrator and day-to-day administrator accounts instead of root/primary account holder credentials.
+	* Consistently implement least privilege accounts for metastructure access.
+		* This is why you separate development and test accounts with your cloud provider.
+	* Enforce use of MFA whenever available.
 * Business continuity
-    * Architecture for failure.
-    * Take a risk-based approach to everything. Even when you assume the worst, it doesn't mean you can afford or need to keep full availability if the worst happens.
-    * Design for high availability within your cloud provider. In IaaS and PaaS this is often easier and more cost effective than the equivalent in traditional infrastructure.
-        * Take advantage of provider-specific features.
-        * Understand provider history, capabilities, and limitations.
-        * Cross-location should always be considered, but beware of costs depending on availability requirements.
-            * Also ensure things like images and asset IDs are converted to work in the different locations.
-        * BC for metastructure is as important as that for assets.
-    * Prepare for graceful failure in case of a cloud provider outage.
+	* Architecture for failure.
+	* Take a risk-based approach to everything. Even when you assume the worst, it doesn't mean you can afford or need to keep full availability if the worst happens.
+	* Design for high availability within your cloud provider. In IaaS and PaaS this is often easier and more cost effective than the equivalent in traditional infrastructure.
+		* Take advantage of provider-specific features.
+		* Understand provider history, capabilities, and limitations.
+		* Cross-location should always be considered, but beware of costs depending on availability requirements.
+			* Also ensure things like images and asset IDs are converted to work in the different locations.
+		* BC for metastructure is as important as that for assets.
+	* Prepare for graceful failure in case of a cloud provider outage.
 		* This can include plans for interoperability and portability with other cloud providers or a different region with your current provider.
-    * For super-high-availability applications, start with cross-location BC before attempting cross-provider BC.
-    * Cloud providers, including private cloud, must provide the highest levels of availability and mechanisms for customers/users to manage aspects of their own availability.
+	* For super-high-availability applications, start with cross-location BC before attempting cross-provider BC.
+	* Cloud providers, including private cloud, must provide the highest levels of availability and mechanisms for customers/users to manage aspects of their own availability.
+
+[1]:	https://en.wikipedia.org/wiki/Representational_state_transfer

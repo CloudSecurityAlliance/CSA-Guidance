@@ -146,6 +146,19 @@ Since the terms *entitlement, authorization, and access control* all overlap som
 
 This is only one definition of these terms and you may see them used differently in other documents. We also use the term *access management* as the "A" half of IAM and it refers to the entire process of defining, propagating, and enforcing authorizations.
 
+> Sample Entitlement Matrix
+
+Project X
+
+|	Entitlement	| 	super-admin	|	service 1 admin	|	service 2 admin	|	dev	|	security audit	|	security admin
+| -----	|	----------- |	 ----------- |	----------- |	 ----------- | ----------- |
+|	Service1 List All All	|	X	|	X	|		|	X	|	X	|	X	|
+|	Service 2 List All	|	X	|		|	X	|	X	|	X	|		X	|	
+|	Service 1 Modify Network	|	X	|	X	|		|	X	|		|		X	|	
+|	Service 2 Modify Security Rule	|	X	|	X	|		|		|		|		X	|	
+|	Read Audit Logs	|	X	|		|		|		|	X	|		X	|	
+|	...	|	X	|	X	|	X	|	X	|	X	|		X	|	
+
 Here's a real-world cloud example. The cloud provider has an API for launching new virtual machines. That API has a corresponding authorization to allow launching new machines, with additional authorization options for what virtual network a user can launch the VM within. The cloud administrator creates an entitlement that says users in the developer group can launch virtual machines in only their project network and only if they authenticated with MFA. The group and use of MFA are attributes of the user's identity. That entitlement is written as a policy that is loaded into the cloud provider's system for enforcement.
 
 Cloud impacts entitlements, authorizations, and access management in multiple ways:

@@ -8,15 +8,15 @@ Managing information in the era of cloud computing is a daunting challenge that 
 
 Definition of information/data governance:
 
-*Ensuring use of data and information complies with organizational policies, standards and strategy — including regulatory, contractual, and business objectives.*
+*Ensuring the use of data and information complies with organizational policies, standards and strategy — including regulatory, contractual, and business objectives.*
  
-Our data is always subject to a range of requirements. Some pushed onto us by others — like regulatory agencies or customers and partners — others that are self-defined based on our risk tolerance or simply how we want to manage operations. Information governance includes the corporate structures and controls we use to ensure we handle data in accordance with our goals and requirements. 
+Our data is always subject to a range of requirements. Some placed on us by others — like regulatory agencies or customers and partners — others that are self-defined based on our risk tolerance or simply how we want to manage operations. Information governance includes the corporate structures and controls we use to ensure we handle data in accordance with our goals and requirements. 
 
 There are numerous aspects of having data stored in the cloud that have an impact on information and data governance requirements. 
 
 * *Multi-tenancy:* Multi-tenancy presents complicated security implications. When data is stored in the public cloud, it’s stored on shared infrastructure with other, untrusted tenants. Even in a private cloud environment it is stored and managed on infrastructure that’s shared across different business units, which likely have different governance needs.
 
-* *Shared security responsibility:* With greater sharing of environments comes greater shared security responsibilities. Data is now more likely to be owned and managed by different teams or even organizations. So, it’s important to recognize the difference between data custodianship and data ownership
+* *Shared security responsibility:* With greater sharing of environments comes greater shared security responsibilities. Data is now more likely to be owned and managed by different teams or even organizations. So, it’s important to recognize the difference between data custodianship and data ownership.
 
 	* *Ownership*, as the name says, is about who owns the data. It’s not always perfectly clear. If a customer provides you data, you might own it or they might still legally own it, depending on law, contracts, and policies. If you host your data on a public cloud provider you *should* own it, but that might again depend on contracts.
 
@@ -24,7 +24,7 @@ There are numerous aspects of having data stored in the cloud that have an impac
 
 	By hosting customer data in the cloud, we are introducing a third party into the governance model, the cloud provider.
 
-* *Jurisdictional boundaries and data sovereignty* - Since cloud, by definition, enables broad network access, it increases the opportunities to host data in more locations (jurisdictions) and reduced the friction in migrating data. Some providers may not be as transparent about the physical location of the data, while in other cases additional controls may be needed to restrict data to particular locations.
+* *Jurisdictional boundaries and data sovereignty* - Since cloud, by definition, enables broad network access, it increases the opportunities to host data in more locations (jurisdictions) and reduces the friction in migrating data. Some providers may not be as transparent about the physical location of the data, while in other cases additional controls may be needed to restrict data to particular locations.
 
 * *Compliance, regulations, and privacy policies* -  All of these may be impacted by cloud due to the combination of a 3rd party provider and jurisdictional changes. E.g. your customer agreement may not allow you to share/use data on a cloud provider, or may have certain security requirements (like encryption).
 
@@ -40,9 +40,9 @@ When migrating to cloud, use it as an opportunity to revisit information archite
 
 We will not cover all of data governance, but we’ll focus on where hosting in the cloud affects data governance. Cloud computing affects most data governance domains:
 
-* *Information Classification.* This is frequently tied to compliance and affects cloud destinations and handling requirements. Not everyone necessarily has a data classification program, but if you do you need to adjust it for cloud computing. 
+* *Information Classification.* This is frequently tied to compliance and affects cloud destinations and handling requirements. Not everyone necessarily has a data classification program, but if you do you need to adjust it for cloud computing.
 
-* *Information Management Policies.*  This ties to classification and the cloud needs to be added if you have them. It should also cover the different SPI tiers, since sending data to a SaaS vendor versus building your own IaaS app is very different. You need to determine, what is allowed to go where in the cloud? Which products and services? With what security requirements? 
+* *Information Management Policies.*  These tie to classification and the cloud needs to be added if you have them. They should also cover the different SPI tiers, since sending data to a SaaS vendor versus building your own IaaS app is very different. You need to determine, what is allowed to go where in the cloud? Which products and services? With what security requirements?
 
 * *Location and Jurisdiction Polices.* These have very direct cloud implications. Any outside hosting must comply with locational and jurisdictional requirements. Understand that internal policies can be changed for cloud computing, but legal requirements are hard lines. (See the legal domain for more information on this.) Make sure you understand that treaties and laws may create conflicts. You need to work with your legal department when handling regulated data to ensure you comply as best you can.
 
@@ -60,16 +60,16 @@ We will not cover all of data governance, but we’ll focus on where hosting in 
 
 ### The Data Security Lifecycle
 
-Although Information Lifecycle Management is a fairly mature field, it doesn’t map well to the needs of security professionals. The Data Security Lifecycle is different from Information Lifecycle Management, reflecting the different needs of the security audience. This is a summary of the lifecycle, and a complete version is available at http://www.securosis.com/blog/data-security-lifecycle-2.0 It is simply a tool to help understand the security boundaries and controls around data. It’s not meant to be used as a rigorous tool for all types of data. It's a modeling tool to help evaluate data security at a high level and find focus points.
+Although Information Lifecycle Management is a fairly mature field, it doesn’t map well to the needs of security professionals. The Data Security Lifecycle is different from Information Lifecycle Management, reflecting the different needs of the security audience. This is a summary of the lifecycle, and a complete version is available at http://www.securosis.com/blog/data-security-lifecycle-2.0. It is simply a tool to help understand the security boundaries and controls around data. It’s not meant to be used as a rigorous tool for all types of data. It's a modeling tool to help evaluate data security at a high level and find focus points.
 
 The lifecycle includes six phases from creation to destruction.  Although it is shown as a linear progression, once created, data can bounce between phases without restriction, and may not pass through all stages (for example, not all data is eventually destroyed).
 
-1. Create. Creation is the generation of new digital content, or the alteration/updating/modifying of existing content.
-2. Store. Storing is the act committing the digital data to some sort of storage repository and typically occurs nearly simultaneously with creation.
-3. Use. Data is viewed, processed, or otherwise used in some sort of activity, not including modification.
-4. Share. Information is made accessible to others, such as between users, to customers, and to partners.
-5. Archive. Data leaves active use and enters long-term storage.
-6. Destroy. Data is permanently destroyed using physical or digital means (e.g., cryptoshredding).
+1. *Create.* Creation is the generation of new digital content, or the alteration/updating/modifying of existing content.
+2. *Store.* Storing is the act committing the digital data to some sort of storage repository and typically occurs nearly simultaneously with creation.
+3. *Use.* Data is viewed, processed, or otherwise used in some sort of activity, not including modification.
+4. *Share.* Information is made accessible to others, such as between users, to customers, and to partners.
+5. *Archive.* Data leaves active use and enters long-term storage.
+6. *Destroy.* Data is permanently destroyed using physical or digital means (e.g., cryptoshredding).
 
 #### Locations and Entitlements
 
@@ -77,7 +77,7 @@ The lifecycle represents the phases information passes through but doesn’t add
  
 *Locations*
 
-This can be illustrated by thinking of the lifecycle not as a single, linear operation, but as a series of smaller lifecycles running in different operating environments.  At nearly any phase data can move into, out of, and between these environments.
+This can be illustrated by thinking of the lifecycle not as a single, linear operation, but as a series of smaller lifecycles running in different operating environments. At nearly any phase data can move into, out of, and between these environments.
 
 Due to all the potential regulatory, contractual, and other jurisdictional issues it is extremely important to understand both the logical and physical locations of data.
 
@@ -85,8 +85,8 @@ Due to all the potential regulatory, contractual, and other jurisdictional issue
 
 When users know where the data lives and how it moves, they need to know who is accessing it and how.  There are two factors here:
 
-1.	Who accesses the data?
-2.	How can they access it (device & channel)?
+1.  Who accesses the data?
+2.  How can they access it (device & channel)?
 
 Data today is accessed using a variety of different devices.  These devices have different security characteristics and may use different applications or clients.
 
@@ -98,9 +98,9 @@ The next step identifies the functions that can be performed with the data, by a
 
 There are three things we can do with a given datum:
 
-* Read.  View/read the data, including creating, copying, file transfers, dissemination, and other exchanges of information.
-* Process. Perform a transaction on the data: update it; use it in a business processing transaction, etc.
-* Store.  Hold the data (in a file, database, etc.).
+* *Read.*  View/read the data, including creating, copying, file transfers, dissemination, and other exchanges of information.
+* *Process.* Perform a transaction on the data: update it; use it in a business processing transaction, etc.
+* *Store.* Hold the data (in a file, database, etc.).
 
 The table below shows which functions map to which phases of the lifecycle:
 

@@ -2,35 +2,37 @@
 
 ## Introduction
 
-Organizations face new challenges as they migrate from traditional data centers to the cloud. Delivering, measuring, and communicating compliance with a multitude of regulations across multiple jurisdictions is one of the largest challenges.  Customers and providers alike need to understand and appreciate the differences and implications on existing compliance and audit standards, processes, and practices. The distributed and virtualized nature of cloud requires significant adjustment from approaches based on definite and physical instantiations of information and processes. 
+Organizations face new challenges as they migrate from traditional data centers to the cloud. Delivering, measuring, and communicating compliance with a multitude of regulations across multiple jurisdictions is one of the largest of these challenges. Customers and providers alike need to understand and appreciate the jurisdictional differences and their implications on existing compliance and audit standards, processes, and practices. The distributed and virtualized nature of cloud computing requires significant adjustment from approaches based on definite and physical instantiations of information and processes. 
 
-In addition to providers and customers, regulators and auditors are also adjusting to the new world of cloud computing.  Few existing regulations were written to account for virtualized environments or cloud deployments.  A cloud consumer can be challenged to show auditors that the organization is in compliance.  Understanding the interaction of cloud computing and the regulatory environment is a key component of any cloud strategy.  Cloud customers, auditors, and providers must consider and understand the following:
+In addition to providers and customers, regulators and auditors are also adjusting to the new world of cloud computing. Few existing regulations were written to account for virtualized environments or cloud deployments. A cloud consumer can be challenged to show auditors that the organization is in compliance. Understanding the interaction of cloud computing and the regulatory environment is a key component of any cloud strategy. Cloud customers, auditors, and providers must consider and understand the following:
 
-* Regulatory implications for using a particular cloud service or providers, giving particular attention to any cross-border or multi-jurisdictional issues when applicable.* Assignment of compliance responsibilities between the provider and customer, including indirect providers (i.e., the cloud provider of your cloud provider). This includes the concept of *compliance inheritance* where a provider may have parts of their service certified as compliant which removes this from the audit scope of the customer, but the customer is still responsible for the compliance of everything they build on top of the provider.* Provider capabilities for demonstrating compliance, including document generation, evidence production, and process compliance, in a timely manner.
+* Regulatory implications for using a particular cloud service or providers, giving particular attention to any cross-border or multi-jurisdictional issues when applicable.
+* Assignment of compliance responsibilities between the provider and customer, including indirect providers (i.e., the cloud provider of your cloud provider). This includes the concept of *compliance inheritance* where a provider may have parts of their service certified as compliant which removes this from the audit scope of the customer, but the customer is still responsible for the compliance of everything they build on top of the provider.
+* Provider capabilities for demonstrating compliance, including document generation, evidence production, and process compliance, in a timely manner.
 
 Some additional cloud-specific issues to pay particular attention to include:
 
 * The role of provider audits and certifications and how those affect customer audit (or assessment) scope.
-* Understanding which features and services in a cloud provider are within the scope of which audits and assessments.
+* Understanding which features and services of a cloud provider are within the scope of which audits and assessments.
 * Managing compliance and audits over time.
 * Working with regulators and auditors who may lack experience with cloud computing technology.
-* Working with providers who may lack audit and or regulatory compliance experience
+* Working with providers who may lack audit and or regulatory compliance experience.
 
 ## Overview
 
-Achieving and maintaining compliance with a plethora of modern regulations and standards is a core activity for most information security teams and a critical tool of governance and risk management. So much so that the tools and teams in this realm are called *GRC* — governance, risk, and compliance.  Although very closely related, with audits one key mechanism to support, assure, and demonstrate compliance, there is more to compliance than audits and more to audits than using them to assure regulatory compliance. For our purposes:
+Achieving and maintaining compliance with a plethora of modern regulations and standards is a core activity for most information security teams and a critical tool of governance and risk management. So much so that the tools and teams in this realm have their own acronym: *GRC*, for governance, risk, and compliance. Although very closely related with audits — which are a key mechanism to support, assure, and demonstrate compliance — there is more to compliance than audits and more to audits than using them to assure regulatory compliance. For our purposes:
 
-	* Compliance involves the awareness and adherence to corporate obligations (e.g., corporate social responsibility, ethics, applicable laws, regulations, contracts, strategies and policies) by assessing the state of compliance, assessing the risks and potential costs of non-compliance against the costs to achieve compliance, and hence prioritize, fund, and initiate any corrective actions deemed necessary.
+* Compliance validates awareness of and adherence to corporate obligations (e.g., corporate social responsibility, ethics, applicable laws, regulations, contracts, strategies and policies). The compliance process assesses the state of that awareness and adherence, further assessing the risks and potential costs of non-compliance against the costs to achieve compliance, and hence prioritize, fund, and initiate any corrective actions deemed necessary.
 	
-	* Audits are a key tool for proving (or not) compliance. We also use audits and assessments to support non-compliance risk decisions. 
-	
+* Audits are a key tool for proving (or disproving) compliance. We also use audits and assessments to support non-compliance risk decisions. 
+	 
 This section discusses these interrelated domains individually to better focus on the implications cloud computing has on each.
 
 ### Compliance
-	
+ 
 Information technology in the cloud (or anywhere really) is increasingly subject to a plethora of policies and regulations from governments, industry groups, business relationships, and other stakeholders. Compliance management is a tool of governance; it is how an organization assesses, remediates, and proves it is meeting these internal and external obligations.
 
-Regulations, in particular, typically have strong implications for information technology and its governance, especially in terms of monitoring, management, protection, and disclosure). Many regulations and obligations require a certain level of security, which is why information security is so deeply coupled with compliance. Security controls are thus an important tool to assure compliance, and evaluation and testing of these controls is a core activity for security professionals. This includes assessments even when performed by dedicated internal *or* external auditors.
+Regulations, in particular, typically have strong implications for information technology and its governance, especially in terms of monitoring, management, protection, and disclosure. Many regulations and obligations require a certain level of security, which is why information security is so deeply coupled with compliance. Security controls are thus an important tool to assure compliance, and evaluation and testing of these controls is a core activity for security professionals. This includes assessments even when performed by dedicated internal *or* external auditors.
 
 #### How Cloud Changes Compliance
 
@@ -49,7 +51,7 @@ Cloud compliance issues aren't merely limited to pass-through audits; the nature
 
 Many cloud providers offer globally distributed data centers running off a central management console/platform. It is still the customer's responsibility to manage and understand where to deploy data and services and still maintain their legal compliance across national and international jurisdictions.
 
-Organizations have the same responsibility in traditional computing, but the cloud dramatically reduces the friction of these potentially-international deployments. E.g. a developer can potentially deploy regulated data in a non-compliant country without having to request an international data center and sign off on multiple levels of contracts, should the proper controls not be enabled to prevent this.
+Organizations have the same responsibility in traditional computing, but the cloud dramatically reduces the friction of these potentially international deployments. E.g. a developer can potentially deploy regulated data in a non-compliant country without having to request an international data center and sign off on multiple levels of contracts, should the proper controls not be enabled to prevent this.
 
 Not all features and services within a given cloud provider are necessarily compliant and certified/audited with respect to all regulations and standards. It is incumbent on the cloud provider to communicate certifications and attestations clearly, and for customers to understand the scopes and limitations.
 
@@ -57,7 +59,7 @@ Not all features and services within a given cloud provider are necessarily comp
 
 Proper organizational governance naturally includes audit and assurance. Audit must be independently conducted and should be robustly designed to reflect best practice, appropriate resources, and tested protocols and standards. Before delving into cloud implications we need to define the scope of audit management related to information security.
 
-Audits and assessments are mechanisms to *document compliance* with internal or external requirements (or identify deficiencies). Reporting needs to include a compliance determination as well a list of identified issues, risks and remediation recommendations. Audits and assessments aren't limited to information security, but those related to information security typically focus on evaluating the effectiveness of security management and controls. Most organizations are subject to a mix of internal and external audits and assessments to assure compliance with internal and external requirements. 
+Audits and assessments are mechanisms to *document compliance* with internal or external requirements (or identify deficiencies). Reporting needs to include a compliance determination as well as a list of identified issues, risks and remediation recommendations. Audits and assessments aren't limited to information security, but those related to information security typically focus on evaluating the effectiveness of security management and controls. Most organizations are subject to a mix of internal and external audits and assessments to assure compliance with internal and external requirements. 
 
 All audits have variable scope and statement of applicability, which defines what is evaluated (e.g. all systems with financial data) and to which controls (e.g. an industry standard, custom scope, or both). An *attestation* is a legal statement from a third party, which can be used as their statement of audit findings. Attestations are a key tool when evaluating and working with cloud providers since the cloud customer does not always get to perform their own assessments. 
 
@@ -77,7 +79,7 @@ Certain types of customer technical assessments and audits (such as a vulnerabil
 
 It's important to remember that attestations and certifications are point-in-time activities. An attestation is a statement of an "over a period of time" assessment and may not be valid at any future point. Providers must keep any published results current or they risk exposing their customers to risks of non-compliance. Depending on contracts, this could even lead to legal exposures to the provider. Customers are also responsible for ensuring they rely on current results and track when their providers' statuses change over time. 
 
-*Artifacts* are the logs, documentation, and other materials needed for audits and compliance; they are the evidence to support compliance activities. Both providers and customers have responsibilities for producing and managing their respective artifacts. Customers are ultimately responsible for the artifacts to support their own audits, and thus need to know what the provider offers, and create their own artifacts to cover any gaps. For example, by building in more robust logging into an application since server logs on PaaS may not be available.
+*Artifacts* are the logs, documentation, and other materials needed for audits and compliance; they are the evidence to support compliance activities. Both providers and customers have responsibilities for producing and managing their respective artifacts. Customers are ultimately responsible for the artifacts to support their own audits, and thus need to know what the provider offers, and create their own artifacts to cover any gaps. For example, by building more robust logging into an application since server logs on PaaS may not be available.
 
 ## Recommendations
 
@@ -92,13 +94,12 @@ It's important to remember that attestations and certifications are point-in-tim
 	* Cloud providers should engage in continuous compliance initiatives to avoid creating any gaps, and thus exposures, for their customers.
 	* Provide customers commonly needed evidences and artifacts of compliance, such as logs of administrative activity the customer cannot otherwise collect on their own.
 * Cloud customers should:
-	* Understand their full compliance obligations before deploying or migrating to, or developing in, the cloud.
+	* Understand their full compliance obligations before deploying, migrating to, or developing in the cloud.
 	* Evaluate a provider's third-party attestations and certifications and align those to compliance needs.
 	* Understand the scope of assessments and certifications, including both the controls and the features/services covered.
 	* Attempt to select auditors with experience in cloud computing, especially if pass-through audits and certifications will be used to manage the customer's audit scope.
 	* Ensure they understand what artifacts of compliance the provider offers, and effectively collect and manage those artifacts.
 		* Create and collect their own artifacts when the provider's artifacts are not sufficient.
 	* Keep a register of cloud providers used, relevant compliance requirements, and current status. The Cloud Security Alliance Cloud Controls Matrix can support this activity.
-
 
 
