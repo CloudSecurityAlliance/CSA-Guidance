@@ -19,13 +19,13 @@ Before delving into the details of the different significant SecaaS categories i
 	
 #### Potential benefits
 
-* *Cloud-computing benefits.* The normal potential benefits benefits of cloud computing—such as reduced capital expenses, agility, redundancy, high-availability, and resiliency—all apply to SecaaS. As with any other cloud provider the magnitude of these benefits depend on the pricing, execution, and capabilities of the security provider.
+* *Cloud-computing benefits.* The normal potential benefits benefits of cloud computing—such as reduced capital expenses, agility, redundancy, high availability, and resiliency—all apply to SecaaS. As with any other cloud provider the magnitude of these benefits depend on the pricing, execution, and capabilities of the security provider.
 
 * *Staffing and expertise.* Many organizations struggle to employ, train, and retain security professionals across relevant domains of expertise. This can be exacerbated due to limitations of local markets, high costs for specialists, and balancing day-to-day needs with the high rate of attacker innovation. As such, SecaaS providers bring the benefit of extensive domain knowledge and research that may be unattainable for many organizations who are not solely focused on security or the specific security domain.
 
-* *Intelligence sharing.* SecaaS providers protect multiple clients simultaneously and have the opportunity to share data intelligence and data across them. For example, finding a malware sample in one client allows the provider to immediately add it to their defensive platform, thus protecting all other customers. Practically speaking this isn't a magic wand, as the effectiveness will vary across categories, but since intelligence sharing is built into the service, the potential upside is there. 
+* *Intelligence-sharing.* SecaaS providers protect multiple clients simultaneously and have the opportunity to share data intelligence and data across them. For example, finding a malware sample in one client allows the provider to immediately add it to their defensive platform, thus protecting all other customers. Practically speaking this isn't a magic wand, as the effectiveness will vary across categories, but since intelligence-sharing is built into the service, the potential upside is there. 
 
-* *Deployment flexibility.* SecaaS may be better positioned to support evolving workplaces and cloud migrations, since it is itself a cloud-native model delivered using broad network access and elasticity. Services can typically handle more-flexible deployment models, such as supporting distributed locations without the complexity of multi-site hardware installations.
+* *Deployment flexibility.* SecaaS may be better positioned to support evolving workplaces and cloud migrations, since it is itself a cloud-native model delivered using broad network access and elasticity. Services can typically handle more flexible deployment models, such as supporting distributed locations without the complexity of multi-site hardware installations.
 
 * *Insulation of clients.* In some cases, SecaaS can intercept attacks before they hit the organization directly. For example, spam filtering and cloud-based Web Application Firewalls are positioned *between* the attackers and the organization. They can absorb certain attacks before they ever reach the customer's assets.
 		
@@ -39,32 +39,33 @@ Before delving into the details of the different significant SecaaS categories i
 
 * *Handling of regulated data.* Customers will also need assurance that any regulated data potentially vacuumed up as part of routine security scanning or a security incident is handled in accordance with any compliance requirements; this also needs to comply with aforementioned international jurisdictional differences. For example, employee monitoring in Europe is more restrictive than it is in the United States, and even basic security monitoring practices could violate workers' rights in that region. Likewise, if a SecaaS provider relocates its operations, due to data center migration or load balancing, it may violate regulations that have geographical restrictions in data residence.
 
-* *Data leakage.* As with any cloud computing service or product, there is always the concern of data from one cloud consumer leaking to another. This risk isn't unique to SecaaS, but the highly sensitive nature of security data (and other regulated data potentially exposed in security scanning or incidents) does mean that SecaaS providers should be held to the highest standards of multi-tenant isolation and segregation. Security-related data is also likely to be involved in litigation, law enforcement investigations, and other discovery situations. Customers want to ensure their data will not be exposed when these situations involve another client on the service. 
+* *Data leakage.* As with any cloud computing service or product, there is always the concern of data from one cloud consumer leaking to another. This risk isn't unique to SecaaS, but the highly sensitive nature of security data (and other regulated data potentially exposed in security scanning or incidents) does mean that SecaaS providers should be held to the highest standards of multitenant isolation and segregation. Security-related data is also likely to be involved in litigation, law enforcement investigations, and other discovery situations. Customers want to ensure their data will not be exposed when these situations involve another client on the service. 
 
 * *Changing providers.* Although simply switching SecaaS providers may on the surface seem easier than swapping out on-premises hardware and software, organizations may be concerned about lock-in due to potentially losing access to data, including historical data needed for compliance or investigative support.
 
 * *Migration to SecaaS.* For organizations that have existing security operations and on-premises legacy security control solutions, the migration to SecaaS and the boundary and interface between any in-house IT department and SecaaS providers must be well planned, exercised, and maintained.
 
 ### Major Categories of Security as a Service Offerings
+
 There are a large number of products and services that fall under the heading of Security as a Service. While the following is not a canonical list, it describes many of the more common categories seen as of this writing:
 		
 #### Identity, Entitlement, and Access Management Services
 			 
-Identity-as-a-service is a generic term that covers one or many of the services that may comprise an identity ecosystem, such as Policy Enforcement Points (PEP-as-a-service), Policy Decision Points (PDP-as-a-service), Policy Access Points (PAP-as-a-service), services that provide Entities with Identity, services that provide attributes (e.g. Multi Factor Authentication), and services that provide reputation. 
+Identity-as-a-service is a generic term that covers one or many of the services that may comprise an identity ecosystem, such as Policy Enforcement Points (PEP-as-a-service), Policy Decision Points (PDP-as-a-service), Policy Access Points (PAP-as-a-service), services that provide Entities with Identity, services that provide attributes (e.g. Multi-Factor Authentication), and services that provide reputation. 
 
-One of the more well-known categories heavily used in cloud security are Federated Identity Brokers. These services help intermediate IAM between an organization's existing identity providers (internal or cloud-hosted directories) and the many different cloud services used by the organization. They can provide web Single Sign On (SSO), helping ease some of the complexity of connecting to a wide range of external services that use different federation configurations.
+One of the more well-known categories heavily used in cloud security are Federated Identity Brokers. These services help intermediate IAM between an organization's existing identity providers (internal or cloud-hosted directories) and the many different cloud services used by the organization. They can provide web-based Single Sign On (SSO), helping ease some of the complexity of connecting to a wide range of external services that use different federation configurations.
 
-There are two other categories commonly seen in cloud deployments: Strong authentication services use apps and infrastructure to simplify the integration of various strong authentication options, including mobile device apps and tokens for MFA. The other category hosts directory servers in the cloud to serve as an organization's identity provider.
+There are two other categories commonly seen in cloud deployments. Strong authentication services use apps and infrastructure to simplify the integration of various strong authentication options, including mobile device apps and tokens for MFA. The other category hosts directory servers in the cloud to serve as an organization's identity provider.
 
 #### Cloud Access and Security Brokers (CASB, also known as Cloud Security Gateways)
 
-These products intercept communications that are directed towards a cloud service, or directly connect to the service via API, in order to monitor activity, enforce policy, and detect and/or prevent security issues. They are most commonly used to manage an organization's sanctioned and unsanctioned SaaS services. While there are on-premises CASB options, it is also often offered as a cloud-hosted service.
+These products intercept communications that are directed towards a cloud service or directly connect to the service via API in order to monitor activity, enforce policy, and detect and/or prevent security issues. They are most commonly used to manage an organization's sanctioned and unsanctioned SaaS services. While there are on-premises CASB options, it is also often offered as a cloud-hosted service.
 
 CASBs can also connect to on-premises tools to help an organization detect, assess, and potentially block cloud usage and unapproved services. Many of these tools include risk-rating capabilities to help customers understand and categorize hundreds or thousands of cloud services. The ratings are based on a combination of the provider's assessments, which can be weighted and combined with the organization's priorities.
 
 Most providers also offer basic Data Loss Prevention for the covered cloud services, inherently or through partnership and integration with other services. 
 
-Depending on the organization discussing "CASB," the term is also sometimes used to include Federated Identity Brokers. This can be confusing: although the combination of the "security gateway" and "identity brokers" capabilities is possible and does exist, the market is still dominated by independent services for those two capabilities. 
+Depending on the organization discussing "CASB," the term is also sometimes used to include Federated Identity Brokers. This can be confusing: although the combination of the "security gateway" and "identity broker" capabilities is possible and does exist, the market is still dominated by independent services for those two capabilities. 
 
 #### Web Security (Web Security Gateways)
 
@@ -72,13 +73,13 @@ Web Security involves real-time protection, offered either on-premises through s
 
 #### Email Security 
 
-Email Security should provide control over inbound and outbound email, protecting the organization from risks like phishing and malicious attachments, as well as enforcing corporate polices, such as acceptable use and spam prevention, and providing business continuity options. 
+Email Security should provide control over inbound and outbound email, protecting the organization from risks like phishing and malicious attachments, as well as enforcing corporate polices like acceptable use and spam prevention, and providing business continuity options. 
 
 In addition, the solution may support policy-based encryption of emails as well as integrating with various email server solutions. Many email security solutions also offer features like digital signatures that enable identification and non-repudiation. This category includes the full range of services, from those as simple as anti-spam features all the way to fully-integrated email security gateways with advanced malware and phishing protection.
 
 #### Security Assessment
 
-Security assessments are third-party or customer-driven audits of cloud services or assessments of on-premises systems via cloud-provided solutions. Traditional security assessments for infrastructure, applications, and compliance audits are well defined and supported by multiple standards such as NIST, ISO, and CIS. A relatively mature toolset exists, and a number of tools have been implemented using the SecaaS delivery model. Using that model, subscribers get the typical benefits of cloud-computing: variant—elasticity, negligible setup time, low administration overhead, and pay-per-use with low initial investments. 
+Security assessments are third-party or customer-driven audits of cloud services or assessments of on-premises systems via cloud-provided solutions. Traditional security assessments for infrastructure, applications, and compliance audits are well defined and supported by multiple standards such as NIST, ISO, and CIS. A relatively mature toolset exists, and a number of tools have been implemented using the SecaaS delivery model. Using that model, subscribers get the typical benefits of cloud computing: variant elasticity, negligible setup time, low administration overhead, and pay-per-use with low initial investments. 
 
 There are three main categories of security assessments:
 
@@ -108,9 +109,9 @@ However, encrypting data *outside* a SaaS platform may affect the ability of the
 
 Providers of cloud BC/DR services back up data from individual systems, data centers, or cloud services to a cloud platform instead of relying on local storage or shipping tapes. They may use a local gateway to speed up data transfers and local recoveries, with the cloud service serving as the final repository for worst-case scenarios or archival purposes.
 
-#### Security management
+#### Security Management
 
-These services roll up traditional security management capabilities, such as EPP (endpoint) protection agent management, network security, mobile device management, and son into a single cloud service. This reduces or eliminates the need for local management servers and may be particularly well suited for distributed organizations.
+These services roll up traditional security management capabilities, such as EPP (endpoint) protection, agent management, network security, mobile device management, and so on into a single cloud service. This reduces or eliminates the need for local management servers and may be particularly well suited for distributed organizations.
 
 #### Distributed Denial of Service Protection
 
@@ -118,7 +119,7 @@ By nature, most DDoS protections are cloud-based. They operate by rerouting traf
 
 ## Recommendations
 
-* Before engaging a SecaaS provider, be sure to understand any security-specific requirements for data handling (and availability), investigative, and compliance support.
+* Before engaging a SecaaS provider, be sure to understand any security-specific requirements for data-handling (and availability), investigative, and compliance support.
 * Pay particular attention to handling of regulated data, like PII.
 * Understand your data retention needs and select a provider that can support data feeds that don't create a lock-in situation.
 * Ensure that the SecaaS service is compatible with your current and future plans, such as its supported cloud (and on-premises) platforms, the workstation and mobile operating systems it accommodates, and so on.

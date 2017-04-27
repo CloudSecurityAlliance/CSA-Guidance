@@ -64,6 +64,9 @@ Although Information Lifecycle Management is a fairly mature field, it doesn’t
 
 The lifecycle includes six phases from creation to destruction.  Although it is shown as a linear progression, once created, data can bounce between phases without restriction, and may not pass through all stages (for example, not all data is eventually destroyed).
 
+**********Insert 5.1************
+> The Data Security Lifecycle
+
 1. *Create.* Creation is the generation of new digital content, or the alteration/updating/modifying of existing content.
 2. *Store.* Storing is the act committing the digital data to some sort of storage repository and typically occurs nearly simultaneously with creation.
 3. *Use.* Data is viewed, processed, or otherwise used in some sort of activity, not including modification.
@@ -78,6 +81,9 @@ The lifecycle represents the phases information passes through but doesn’t add
 *Locations*
 
 This can be illustrated by thinking of the lifecycle not as a single, linear operation, but as a series of smaller lifecycles running in different operating environments. At nearly any phase data can move into, out of, and between these environments.
+
+********Insert 5.2*********
+> Data is accessed and stored in multiple locations, each with its own lifecycle.
 
 Due to all the potential regulatory, contractual, and other jurisdictional issues it is extremely important to understand both the logical and physical locations of data.
 
@@ -127,6 +133,8 @@ Table 2—Possible and Allowed Controls
 |          |         |          |         |          |         |
 |          |         |          |         |          |         |
 
+**********Insert 5.3**************
+> Mapping the lifecycle to functions and controls.
 
 ## Recommendations
 

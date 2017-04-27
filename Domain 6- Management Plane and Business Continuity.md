@@ -90,6 +90,9 @@ Separate from the account-owner you can usually create super-admin accounts for 
 
 Your platform or provider may support lower-level administrative accounts that can only manage parts of the service. We sometimes call these "service administrators" or "day to day administrators". These accounts don't necessarily expose the entire deployment if they are abused or compromised and thus are better for common daily usage. They also help compartmentalize individual sessions, so it isn't unusual to allow a single human administrator access to multiple service administrator accounts (or roles) so they can log in with just the privileges they need for that particular action instead of having to expose a much wider range of entitlements.
 
+********insert 6.1********
+>Examples of baseline cloud management plane user accounts including super-administrators and service administrators.
+
 Both providers and consumers should consistently only allow the least privilege required for users, applications, and other management plane usage. 
 
 All privileged user accounts should use multi-factor authentication (MFA). If possible, *all* cloud accounts (even individual user accounts) should use MFA. It's one of the single most effective security controls to defend against a wide range of attacks. This is also true regardless of the service model: MFA is just as important for SaaS as it is for IaaS.
@@ -215,7 +218,7 @@ If you are providing services to others, be aware of contractual requirements, i
 		* Understand provider history, capabilities, and limitations.
 		* Cross-location should always be considered, but beware of costs depending on availability requirements.
 			* Also ensure things like images and asset IDs are converted to work in the different locations.
-		* BC for metastructure is as important as that for assets.
+		* Business Continuity for metastructure is as important as that for assets.
 	* Prepare for graceful failure in case of a cloud provider outage.
 		* This can include plans for interoperability and portability with other cloud providers or a different region with your current provider.
 	* For super-high-availability applications, start with cross-location BC before attempting cross-provider BC.

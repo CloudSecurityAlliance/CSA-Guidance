@@ -20,6 +20,9 @@ For security professionals, cloud computing impacts four areas of governance and
 * *Information security* is the tools and practices to manage risk to information. Information security isn't the be-all and end-all of managing information risks; policies, contracts, insurance, and other mechanisms also play a role (including physical security for non-digital information). However, a—if not *the*—primary role of information security is to provide the processes and controls to protect electronic information and the systems we use to access it.
 
 In a simplified hierarchy, information security is a tool of information risk management, which is a tool of enterprise risk management, which is a tool of governance. The four are all closely related but require individual focus, processes, and tools. 
+
+************insert 2.1 here ************
+> 2.1: A Simplified Risk and Governance Hierarchy
     
 > Legal issues and compliance are covered in Domains 3 and 4, respectively. Information risk management and data governance are covered in domain 5. Information security is essentially the rest of this guidance.
 
@@ -41,6 +44,9 @@ As with any other area, there are specific management tools used for governance.
 
 The primary tool of governance is the contract between a cloud provider and a cloud customer (this is true for public and private cloud). The contract is your only guarantee of any level of service or commitment—assuming there is no breach of contract which, tosses everything into a legal scenario. Contracts are the primary tool to extend governance into business partners and providers.
 
+**************Insert 2.2 here*****************
+> Contracts define the relationship between providers and customers and are the primary tool for customers to extend governance to their suppliers.
+
 * Supplier (cloud provider) Assessments
 
 These assessments are performed by the potential cloud customer using available information and allowed processes/techniques. They combine contractual and manual research with third-party attestations (legal statements often used to communicate the results of an assessment or audit) and technical research. They are very similar to any supplier assessment and can include aspects like financial viability, history, feature offerings, third-party attestations, feedback from peers, and so on. More detail on assessments is covered later in this Domain and in Domain 4.
@@ -52,6 +58,8 @@ Compliance reporting includes all the documentation on a provider's internal (i.
 Compliance reports are often available to cloud prospects and customers but may only be available under NDA or to contracted customers. This is often required by the firm that performed the audit and isn't necessarily something that's completely under the control of the cloud provider.
 
 Assessments and audits should be based on existing standards (of which there are many). It's critical to understand the scope, not just the standard used. Standards like the SSAE 16 have a defined scope, which includes both *what* is assessed (e.g. which of the provider's services) as well as *which controls* are assessed. A provider can thus "pass" an audit that doesn't include any security controls, which isn't overly useful for security and risk managers. Also consider the transitive trust required to treat a third-party assessment as equivalent to the activities that you might undertake when doing your own assessment. Not all audit firms (or auditors) are created equal and the experience, history, and qualifications of the firm should be included in your governance decisions.
+
+The [Cloud Security Alliance STAR Registry](https://cloudsecurityalliance.org/star/#_overview) is an assurance program and documentation registry for cloud provider assessments based on the CSA Cloud Controls Matrix (CCM) and Common Assessment Initiative Questionnaire (CAIQ). Some providers also disclose documentation for additional certifications and assessments (including self assessments).
 
 ### Enterprise Risk Management
 
@@ -133,6 +141,9 @@ The supplier assessment sets the groundwork for the cloud risk management progra
 	* Review any legal, regulatory, contractual, and jurisdictional requirements for both the provider and yourself. (See the Domain 3: Legal for more.)
 	* Evaluate the contracted service in the context of your information assets.
 	* Separately evaluate the overall provider, such as finances/stability, reputation, and outsourcers.
+
+*************insert 2.3 here*****************
+> Supplier Assessment Process
 
 Periodically review audits and assessments to ensure they are up to date:
 	* Don't assume all services from a particular provider meet the same audit/assessment standards. They can vary.

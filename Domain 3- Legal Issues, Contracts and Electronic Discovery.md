@@ -22,6 +22,17 @@ This domain is primarily concerned with the legal implications of public cloud c
 
 In many countries throughout the world, numerous laws, regulations, and other mandates require public and private organizations to protect the privacy of personal data and the security of information and computer systems. These laws are based in part on the Privacy and Security Guidelines of the Organization for Economic Cooperation and Development (OECD) and the Asia Pacific Economic Cooperation’s (APEC) Privacy Framework. 
 
+Cloud providers and cloud consumers operating in multiple regions will face a matrix of *jurisdictions* where various laws and regulations apply. This is affected by:
+
+	* The location of the cloud provider.
+	* The location of the cloud consumer.
+	* The location of the data owner (the individual or person that "owns" and provides the data).
+	* The legal jurisdiction of the contract, which may be different than the locations of any stakeholders.
+	* Any treaties or other legal frameworks between those various locations.
+
+***************insert 3.1*************
+> Applicable legal requirements will vary tremendously based on the various jurisdictions and legal entities and frameworks involved.
+
 For example, in the Asia Pacific region, countries including Japan, Australia, New Zealand, and many others have adopted data protection laws that require the data controller to adopt reasonable technical, physical, and administrative measures in order to protect personal data from loss, misuse, or alteration. 
 
 In Japan, the Personal Information Protection Act requires the private sectors to protect personal information and data securely. There are also sector-specific laws in many cases. For example in the healthcare industry, profession-specific laws such as the Medical Practitioners' Act; the Act on Public Health Nurses, Midwives and Nurses; and the Pharmacist Act require registered health professionals to maintain the confidentiality of patient information.

@@ -47,6 +47,9 @@ Many cloud providers are certified for various regulations and industry requirem
 * This means the provider's infrastructure/services are not within scope of a customer's audit/assessment. But everything the customer builds themselves is still within scope.
 * The customer is still ultimately responsible for maintaining the compliance of what they build and manage. For example, if an IaaS provider is PCI DSS certified, the customer can build their own PCI-compliant service on that platform and the provider's infrastructure and operations should be outside the *customer's* assessment scope. However, the customer can just as easily run afoul of PCI and fail their assessment if they don't design their own application running in the cloud properly.
 
+***************insert 4.1**************
+> With compliance inheritance the cloud provider's infrastructure is out of scope for a customer's compliance audit, but everything the customer configures and builds on top of the certified services is still within scope.
+
 Cloud compliance issues aren't merely limited to pass-through audits; the nature of cloud also creates additional differentiators.
 
 Many cloud providers offer globally distributed data centers running off a central management console/platform. It is still the customer's responsibility to manage and understand where to deploy data and services and still maintain their legal compliance across national and international jurisdictions.
@@ -80,6 +83,9 @@ Certain types of customer technical assessments and audits (such as a vulnerabil
 It's important to remember that attestations and certifications are point-in-time activities. An attestation is a statement of an "over a period of time" assessment and may not be valid at any future point. Providers must keep any published results current or they risk exposing their customers to risks of non-compliance. Depending on contracts, this could even lead to legal exposures to the provider. Customers are also responsible for ensuring they rely on current results and track when their providers' statuses change over time. 
 
 *Artifacts* are the logs, documentation, and other materials needed for audits and compliance; they are the evidence to support compliance activities. Both providers and customers have responsibilities for producing and managing their respective artifacts. Customers are ultimately responsible for the artifacts to support their own audits, and thus need to know what the provider offers, and create their own artifacts to cover any gaps. For example, by building more robust logging into an application since server logs on PaaS may not be available.
+
+**********insert 4.2***********
+> Collecting and maintaining artifacts of compliance will change when using a cloud provider.
 
 ## Recommendations
 
