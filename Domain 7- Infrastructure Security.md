@@ -75,7 +75,7 @@ Since physical appliances can't be inserted (except by the cloud provider) they 
 
 On the positive side, software defined networks enable new types of security controls, often making it an overall gain for network security:
 
-* Isolation is easier. It becomes possible to build out as many isolated networks as you need without constraints of physical hardware. For example, if you run multiple networks with the same CIDR address blocks there is no logical way they can directly communicate, due to addressing conflicts. This is an excellent way to segregate applications and services of different security contexts.  
+* Isolation is easier. It becomes possible to build out as many isolated networks as you need without constraints of physical hardware. For example, if you run multiple networks with the same CIDR address blocks there is no logical way they can directly communicate, due to addressing conflicts. This is an excellent way to segregate applications and services of different security contexts.  We discuss this *microsegregation* in more detail below.
 	 
 * SDN firewalls (e.g, security groups) can apply to assets based on more flexible criteria than hardware-based firewalls, since they aren't limited based on physical topology. (Note that this is true of many types of software firewalls, but is distinct from hardware firewalls). SDN firewalls are typically policy sets that define ingress and egress rules that can apply to single assets or groups of assets, regardless of network location (within a given virtual network). For example, you can create a set of firewall rules that apply to any asset with a particular tag. Keep in mind this gets slightly difficult to discuss, since different platforms use different terminology and have different capabilities to support this kind of capability, so we are trying to keep things at a conceptual level.
 
@@ -94,6 +94,27 @@ On the positive side, software defined networks enable new types of security con
 		* As with security groups, other routing and network design can be dynamic and tied to the cloud's orchestration layer, such as bridging virtual networks or connecting to internal PaaS services.
 
 		* Additional security functions can potentially be added natively.
+
+### Microsegmentation and the Software Defined Perimeter
+
+*Microsegmentation* (also sometimes referred to as *hypersegregation*)  leverages virtual network topologies to run more, smaller, more isolated networks without incurring additional hardware costs that historically make such models prohibitive. Since the entire networks are defined in software without many of the traditional addressing issues it is far more feasible to run these multiple, software defined environments. 
+
+A common, practical example leveraging this capability is running most, if not all, applications on their own virtual network and only connecting those networks as needed. This dramatically reduces the *blast radius* if an attacker compromises an individual system. The attacker can no longer leverage this foothold to expand across the entire data center. 
+
+Although there are no increases in capital expenses since cloud microsegmentation is based on software configurations, it *can* increase operational expenses in managing multiple overlapping networks and connectivity.
+
+The Cloud Security Alliance [Software Defined Perimeter Working Group](https://cloudsecurityalliance.org/group/software-defined-perimeter/#_overview) has developed a model and specification that combines device and user authentication to dynamically provision network access to resources and enhance security. SDP includes three components:
+
+* An SDP client on the connecting asset (e.g. a laptop).
+* The SDP controller for authenticating and authorize SDP clients and configuring the connections to SDP gateways.
+* The SDP gateway for terminating SDP client network traffic and enforcing policies in communication with the SDP controller.
+
+Network security decisions can thus be made on a wider range of criteria than just IP packets. Especially combined with SDNs this potentially offers more flexibility and security for evolving network topologies.
+
+\*\*\*\*\*\*\*\*\*\*\*insert SDP diagram from https://cloudsecurityalliance.org/group/software-defined-perimeter/#_overview \*\*\*\*\*\*\*\*\*
+> "The Software Defined Perimeter (SDP).
+
+More information on SDP is available from the CSA at [https://cloudsecurityalliance.org/group/software-defined-perimeter/#_overview](https://cloudsecurityalliance.org/group/software-defined-perimeter/#_overview)
 
 ### Additional Considerations for Cloud Providers or Private Clouds
 
