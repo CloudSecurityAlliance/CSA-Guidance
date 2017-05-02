@@ -58,7 +58,7 @@ Clouds are *multitenant* by nature. Multiple different consumer constituencies s
 
 The Cloud Security Alliance (CSA) uses the [NIST model for cloud computing][4] as our standard for defining cloud computing. The CSA also endorses the [ISO/IEC model][5] which is more in-depth, and additionally serves as a reference model. Throughout this domain we will reference both.
 
-[4]: http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf
+[4]: http://dx.doi.org/10.6028/NIST.SP.800-145 
 [5]: http://www.iso.org/iso/catalogue_detail?csnumber=60544
 
 NIST’s publication is generally well accepted, and the Guidance aligns with the NIST Working Definition of Cloud Computing (NIST 800-145) to bring coherence and consensus around a common language to focus on use cases rather than semantic nuances.
