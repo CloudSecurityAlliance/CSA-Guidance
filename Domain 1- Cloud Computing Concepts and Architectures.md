@@ -46,7 +46,7 @@ A cloud can consist of nearly any computing resources, ranging from our "compute
 
 >Definition: A *cloud consumer* is the person or organization requesting and using the resources, and the *cloud provider* is the person or organization who delivers it. We also sometimes use the terms *client* and *consumer* to refer to the cloud consumer, and *service* or simply *cloud* to describe the provider. [NIST 500-292][3] uses the term "cloud actor" and adds roles for cloud brokers, carriers, and auditors. ISO/IEC 17788 uses the terms cloud service customer, cloud service partner, and cloud service provider.
 
-[3]: http://www.nist.gov/customcf/get_pdf.cfm?pub_id=909505
+[3]: http://collaborate.nist.gov/twiki-cloud-computing/pub/CloudComputing/ReferenceArchitectureTaxonomy/NIST_SP_500-292_-_090611.pdf
 
 The key techniques to create a cloud are *abstraction* and *orchestration*. We abstract the resources from the underlying physical infrastructure to create our pools, and use orchestration (and automation) to coordinate carving out and delivering a set of resources from the pools to the consumers. As you will see, these two techniques create all the essential characteristics we use to define something as a "cloud".
 
