@@ -21,7 +21,7 @@ This domain includes 4 sections:
 
 The Cloud Security Alliance isn't setting out to create an entirely new taxonomy or reference model. Our objective is to distill and harmonize existing models—most notably the work in [NIST Special Publication 800-145][1], [ISO/IEC 17788 and ISO/IEC 17789][2]—and focus on what's most relevant to security professionals.
 
-[1]: http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf
+[1]: http://dx.doi.org/10.6028/NIST.SP.800-145
 [2]: http://www.iso.org/iso/catalogue_detail?csnumber=60544
 
 ## 1.1 Overview
